@@ -11,6 +11,7 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
+            <input />
             <Suspense fallback=''>
                 <Navbar />
                 <div className='content-page'>

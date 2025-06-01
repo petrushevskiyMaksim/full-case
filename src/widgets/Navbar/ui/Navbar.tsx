@@ -16,10 +16,10 @@ export const Navbar = ({ className }: NavbarProps) => {
                     to={'/'}
                     className={cls.mainLink}
                 >
-                    Home
+               Home
                 </AppLink>
                 <AppLink theme={AppLinkTheme.INVERTED} to={'/about'}>
-                    About
+               About
                 </AppLink>
             </div>
         </div>
