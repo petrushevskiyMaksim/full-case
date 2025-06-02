@@ -3,6 +3,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import pluginReact from 'eslint-plugin-react';
+import i18next from 'eslint-plugin-i18next';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
@@ -20,6 +21,9 @@ export default defineConfig([
         files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         languageOptions: { globals: globals.browser },
     },
+
+    // SCSS Config
+    // Stylelint Config
 
     // TypeScript Config
     tseslint.configs.recommended,
@@ -46,4 +50,6 @@ export default defineConfig([
             'react/button-has-type': 'error',
         },
     },
+
+    i18next.configs['flat/recommended'],
 ]);

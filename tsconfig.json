@@ -15,7 +15,9 @@
         "allowJs": true,
         "baseUrl": ".",
         "paths": {
-            "*": ["./src/*"]
+            "*": [
+                "./src/*"
+            ]
         },
         "moduleResolution": "node",
         // esModuleInterop позволяет работать с пакетами, которые используют requier commonJS,
