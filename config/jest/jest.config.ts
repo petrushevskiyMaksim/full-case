@@ -33,6 +33,7 @@ const config: Config = {
     ],
     moduleDirectories: ['node_modules'],
     testMatch: [
+        // '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
         '**/__tests__/**/*.?([mc])[jt]s?(x)',
         '**/?(*.)+(spec|test).?([mc])[jt]s?(x)',
     ],
