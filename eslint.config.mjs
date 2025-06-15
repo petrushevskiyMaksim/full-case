@@ -22,9 +22,6 @@ export default defineConfig([
         languageOptions: { globals: globals.browser },
     },
 
-    // SCSS Config
-    // Stylelint Config
-
     // TypeScript Config
     tseslint.configs.recommended,
     // tseslint.configs.strict, // более строгие правила включающие tseslint.configs.recommended
@@ -51,5 +48,15 @@ export default defineConfig([
         },
     },
 
+    // Стандартная конфигурация i18next
     i18next.configs['flat/recommended'],
+
+    // Кастомные правила для i18next
+    {
+        files: ['**/src/**/*.test.{ts,tsx}'],
+
+        rules: {
+            'i18next/no-literal-string': 'off',
+        },
+    },
 ]);
