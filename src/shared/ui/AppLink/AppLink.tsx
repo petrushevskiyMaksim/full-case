@@ -6,6 +6,7 @@ import { FC, ReactNode } from 'react';
 export enum AppLinkTheme {
     PRIMARY = 'primary',
     INVERTED = 'inverted',
+    RED = 'red',
 }
 
 interface AppLinkProps extends LinkProps {
