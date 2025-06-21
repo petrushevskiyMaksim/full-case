@@ -16,6 +16,8 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
@@ -37,3 +39,8 @@ jobs:
 
             - name: Jest testing (unit testing)
               run: npm run test:jest
+
+            - name: Run Chromatic
+              env:
+                  CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+              run: npx chromatic --build-script-name=storybook:build
