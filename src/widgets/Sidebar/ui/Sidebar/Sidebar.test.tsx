@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 
-jest.mock('./Button.module.scss', () => ({
+jest.mock('./Sidebar.module.scss', () => ({
     __esModule: true,
     collapsed: 'collapsed',
 }));
