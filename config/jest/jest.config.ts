@@ -20,6 +20,11 @@ const config: Config = {
     clearMocks: true,
     testEnvironment: 'jsdom',
 
+    globals: {
+        TextEncoder: TextEncoder,
+        TextDecoder: TextDecoder,
+    },
+
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
     moduleFileExtensions: [
         'js',

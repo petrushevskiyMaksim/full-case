@@ -30,17 +30,22 @@ jobs:
 
             - name: Build production project
               run: npm run build:prod
-
+              if: always()
+              
             - name: Linting typescript
               run: npm run lint:ts
+              if: always()
 
             - name: Linting scss
               run: npm run lint:scss
+              if: always()
 
             - name: Jest testing (unit testing)
               run: npm run test:jest
+              if: always()
 
             - name: Run Chromatic
               env:
                   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
               run: npx chromatic --build-script-name=storybook:build
+              if: always()

@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import { componentRender } from 'shared/config/tests/componentRender/componentRender';
+import { renderWithTranslation } from 'shared/config/tests/renderWithTranslation/renderWithTranslation';
 import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
 
 jest.mock('./Sidebar.module.scss', () => ({
@@ -9,12 +10,12 @@ jest.mock('./Sidebar.module.scss', () => ({
 
 describe('Sidebar', () => {
     test('with only first param', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
     test('test toggle', () => {
-        renderWithTranslation(<Sidebar />);
+        componentRender(<Sidebar />);
         const toggleBtn = screen.getByTestId('sidebar-toggle');
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
         // Проверяем, что sidebar изначально не свернут
