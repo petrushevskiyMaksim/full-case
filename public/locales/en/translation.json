@@ -1,12 +1,13 @@
 {
-  "Тестовый перевод": "Test example",
-  "Перевод": "Translate",
-  "Язык": "English",
-  "Страница не найдена": "Page not found",
-  "Произошла непредвиденная ошибка": "An unexpected error occurred",
-  "Обновить страницу": " Refresh page",
-  "throw Error": "throw error",
-  "Home": "Home",
-  "About": "About",
-  "toggle": "toggle"
+    "Тестовый перевод": "Test example",
+    "Перевод": "Translate",
+    "Язык": "English",
+    "Страница не найдена": "Page not found",
+    "Произошла непредвиденная ошибка": "An unexpected error occurred",
+    "Обновить страницу": " Refresh page",
+    "throw Error": "throw error",
+    "Home": "Home",
+    "About": "About",
+    "toggle": "toggle",
+    "Короткий язык": "EN"
 }

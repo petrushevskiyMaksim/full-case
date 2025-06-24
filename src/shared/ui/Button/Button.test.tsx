@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 jest.mock('./Button.module.scss', () => ({
     __esModule: true,
@@ -14,7 +14,7 @@ describe('Button', () => {
     });
 
     test('test clear theme', () => {
-        render(<Button theme={ThemeButton.CLEAR}>Test</Button>);
+        render(<Button theme={ButtonTheme.CLEAR}>Test</Button>);
         screen.debug();
         expect(screen.getByText('Test')).toHaveClass('clear Button');
     });
