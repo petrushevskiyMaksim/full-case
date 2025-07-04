@@ -2,6 +2,8 @@
   "": "",
   "About": "About",
   "Home": "Home",
+  "decrement": "decrement",
+  "increment": "increment",
   "throw Error": "throw Error",
   "toggle": "toggle",
   "Войти": "Войти",
