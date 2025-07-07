@@ -64,4 +64,13 @@ export default defineConfig([
             'i18next/no-literal-string': 'off',
         },
     },
+
+    {
+        files: ['json-server/**/*.js'],
+        rules: {
+            '@typescript-eslint/no-require-imports': 'off',
+            '@typescript-eslint/no-var-requires': 'off',
+            'no-undef': 'off',
+        },
+    },
 ]);

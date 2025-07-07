@@ -23,8 +23,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         use: {
             loader: 'babel-loader',
             options: {
-                targets: 'defaults',
-                presets: [['@babel/preset-env']],
+                // targets: 'defaults',
+                presets: ['@babel/preset-env'],
                 plugins: [
                     [
                         'i18next-extract',
