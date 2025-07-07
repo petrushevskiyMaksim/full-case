@@ -11,5 +11,8 @@
   "toggle": "toggle",
   "Короткий язык": "EN",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Войти": "Enter",
+  "Введите username": "Enter username",
+  "Введите password": "Enter password"
 }
