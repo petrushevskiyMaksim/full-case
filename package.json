@@ -94,6 +94,7 @@
         "react-dom": "^19.1.0",
         "react-i18next": "^15.5.2",
         "react-redux": "^9.2.0",
-        "react-router-dom": "^7.6.0"
+        "react-router-dom": "^7.6.0",
+        "type-fest": "^4.41.0"
     }
 }
