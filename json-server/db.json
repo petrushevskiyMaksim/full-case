@@ -41,6 +41,14 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "firstname": "Максим",
+        "lastname": "Петрушевский",
+        "age": 35,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Tymen",
+        "username": "admin",
+        "avatar": "https://zefirka.club/uploads/posts/2023-01/1673451726_1-zefirka-club-p-top-ava-dlya-ks-go-5.jpg"
+        
     }
 }

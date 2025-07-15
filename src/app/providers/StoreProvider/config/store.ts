@@ -3,6 +3,8 @@ import { counterReducer } from '../../../../entities/Counter';
 import { userReducer } from '../../../../entities/User';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
+import { useAppDispatch } from '../../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDispatch } from 'react-redux';
 
 export function createReduxStore(
     initialState?: StateSchema,

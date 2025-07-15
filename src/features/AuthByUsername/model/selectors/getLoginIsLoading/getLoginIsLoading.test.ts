@@ -1,4 +1,4 @@
-import { DeepPartial } from 'shared/lib/redux/DeepPartial/DeepPartial';
+import { DeepPartial } from 'shared/lib/hooks/DeepPartial/DeepPartial';
 import { getLoginIsLoading } from './getLoginIsLoading';
 import { StateSchema } from 'app/providers/StoreProvider';
 
