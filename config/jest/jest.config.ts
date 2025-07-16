@@ -24,6 +24,7 @@ const config: Config = {
         TextEncoder: TextEncoder,
         TextDecoder: TextDecoder,
         __IS_DEV__: true,
+        __API__: '',
     },
 
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
