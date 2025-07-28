@@ -18,6 +18,13 @@ export default defineConfig([
         rules: {
             indent: [2, 4],
         },
+        languageOptions: {
+            globals: {
+                ...globals.browser, // сохраняем существующие браузерные глобалы
+                __IS_DEV__: true,
+                __API__: true,
+            },
+        },
     },
 
     {

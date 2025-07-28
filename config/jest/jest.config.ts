@@ -7,6 +7,12 @@ import type { Config } from 'jest';
 import path from 'path';
 
 const config: Config = {
+    globals: {
+        TextEncoder: TextEncoder,
+        TextDecoder: TextDecoder,
+        __IS_DEV__: true,
+        __API__: '',
+    },
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -19,13 +25,6 @@ const config: Config = {
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
     testEnvironment: 'jsdom',
-
-    globals: {
-        TextEncoder: TextEncoder,
-        TextDecoder: TextDecoder,
-        __IS_DEV__: true,
-        __API__: '',
-    },
 
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
     moduleFileExtensions: [

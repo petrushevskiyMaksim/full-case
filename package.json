@@ -37,10 +37,12 @@
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.3.0",
+        "@types/aria-query": "^5.0.4",
         "@types/jest": "^29.5.14",
+        "@types/mdx": "^2.0.13",
         "@types/node": "^22.15.19",
-        "@types/react": "^19.1.5",
-        "@types/react-dom": "^19.1.5",
+        "@types/react": "^19.1.8",
+        "@types/react-dom": "^19.1.6",
         "@types/react-i18next": "^7.8.3",
         "@types/react-router-dom": "^5.3.3",
         "@types/webpack": "^5.28.5",
@@ -80,7 +82,8 @@
         "webpack": "^5.99.9",
         "webpack-bundle-analyzer": "^4.10.2",
         "webpack-cli": "^6.0.1",
-        "webpack-dev-server": "^5.2.1"
+        "webpack-dev-server": "^5.2.1",
+        "webpack-env": "^0.8.0"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.8.2",
