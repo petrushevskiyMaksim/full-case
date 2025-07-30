@@ -18,6 +18,11 @@ export default defineConfig([
         rules: {
             indent: [2, 4],
         },
+    },
+
+    {
+        files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+        // languageOptions: { globals: globals.browser },
         languageOptions: {
             globals: {
                 ...globals.browser, // сохраняем существующие браузерные глобалы
@@ -25,11 +30,6 @@ export default defineConfig([
                 __API__: true,
             },
         },
-    },
-
-    {
-        files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-        languageOptions: { globals: globals.browser },
     },
 
     // TypeScript Config

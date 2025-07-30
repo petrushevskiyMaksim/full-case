@@ -7,7 +7,7 @@ import App from './app/App';
 import 'app/styles/index.scss';
 import 'shared/config/i18n/i18n';
 
-const domNode = document.getElementById('root');
+const domNode = document.getElementById('root')!;
 const root = createRoot(domNode);
 
 root.render(

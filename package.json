@@ -21,6 +21,9 @@
     "author": "",
     "license": "ISC",
     "type": "commonjs",
+    "eslintConfig": {
+        "root": true
+    },
     "devDependencies": {
         "@babel/cli": "^7.27.2",
         "@babel/core": "^7.27.3",

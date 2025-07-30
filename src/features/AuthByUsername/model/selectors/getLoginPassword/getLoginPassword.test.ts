@@ -1,4 +1,3 @@
-import { DeepPartial } from 'shared/lib/hooks/DeepPartial/DeepPartial';
 import { getLoginPassword } from './getLoginPassword';
 import { StateSchema } from 'app/providers/StoreProvider';
 

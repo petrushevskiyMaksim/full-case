@@ -1,7 +1,10 @@
 import {
+    AnyAction,
+    Dispatch,
     EnhancedStore,
     Reducer,
     ReducersMapObject,
+    ThunkDispatch,
     UnknownAction,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
@@ -38,7 +41,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate: (to: To, options?: NavigateOptions) => void | Promise<void>;
+    navigate?: (to: To, options?: NavigateOptions) => void | Promise<void>;
 }
 
 export interface ThunkConfig<T> {
