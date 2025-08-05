@@ -8,9 +8,9 @@ import {
     UnknownAction,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
-import { UserSchema } from 'entities/User';
+import { CounterSchema } from '../../../../entities/Counter';
+import { ProfileSchema } from '../../../../entities/Profile';
+import { UserSchema } from '../../../../entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions, To } from 'react-router-dom';
 
@@ -47,4 +47,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArg;
+    state: StateSchema;
 }

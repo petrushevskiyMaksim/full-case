@@ -1,54 +1,53 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "a title",
-            "views": 100
-        },
-        {
-            "id": "2",
-            "title": "another title",
-            "views": 200
-        },
-        {
-            "id": "3",
-            "title": "another title 2",
-            "views": 300
-        },
-        {
-            "id": "4",
-            "title": "another title 3",
-            "views": 400
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "text": "a comment about post 1",
-            "postId": "1"
-        },
-        {
-            "id": "2",
-            "text": "another comment about post 1",
-            "postId": "1"
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ],
-    "profile": {
-        "firstname": "Максим",
-        "lastname": "Петрушевский",
-        "age": 35,
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Tymen",
-        "username": "admin",
-        "avatar": "https://zefirka.club/uploads/posts/2023-01/1673451726_1-zefirka-club-p-top-ava-dlya-ks-go-5.jpg"
-        
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "title": "another title 2",
+      "views": 300
+    },
+    {
+      "id": "4",
+      "title": "another title 3",
+      "views": 400
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "firstname": "Максим",
+    "lastname": "Петрушевский",
+    "age": 35,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Tymen",
+    "username": "admin",
+    "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg"
+  }
 }
