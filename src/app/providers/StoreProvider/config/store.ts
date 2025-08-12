@@ -5,8 +5,8 @@ import {
     ThunkDispatch,
     UnknownAction,
 } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
-import { userReducer } from 'entities/User';
+import { counterReducer } from '../../../../entities/Counter/model/slice/counterSlice';
+import { userReducer } from '../../../../entities/User/model/slice/userSlice';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';

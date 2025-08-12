@@ -28,6 +28,7 @@ export default defineConfig([
                 ...globals.browser, // сохраняем существующие браузерные глобалы
                 __IS_DEV__: true,
                 __API__: true,
+                __PROJECT__: true,
             },
         },
     },
