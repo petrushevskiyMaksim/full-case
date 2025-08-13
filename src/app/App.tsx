@@ -3,17 +3,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { userActions } from 'entities/User';
-import { useNavigate } from 'react-router-dom';
-// import { Suspense } from 'react';
-// import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
+import { getUserInited, userActions } from 'entities/User';
 
 const App = () => {
     const { theme } = useTheme();
     const dispatch = useDispatch();
-    
+    const inited = useSelector(getUserInited);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -21,14 +18,12 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            {/* <Suspense fallback={<PageLoader />}> */}
             <Navbar />
 
             <div className='content-page'>
                 <Sidebar />
-                <AppRouter />
+                {inited && <AppRouter />}
             </div>
-            {/* </Suspense> */}
         </div>
     );
 };
