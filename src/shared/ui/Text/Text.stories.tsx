@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
@@ -60,4 +60,12 @@ export const onlyTextDark: Story = {
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     },
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const SizeL: Story = {
+    args: {
+        title: 'Lorem ipsum dolor sit amet.',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        size: TextSize.L,
+    },
 };

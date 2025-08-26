@@ -1,10 +1,7 @@
 import {
-    AnyAction,
-    Dispatch,
     EnhancedStore,
     Reducer,
     ReducersMapObject,
-    ThunkDispatch,
     UnknownAction,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
@@ -13,6 +10,7 @@ import { ProfileSchema } from '../../../../entities/Profile';
 import { UserSchema } from '../../../../entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { NavigateOptions, To } from 'react-router-dom';
+import { ArticleDetailsSchema } from '../../../../entities/Article';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -21,6 +19,7 @@ export interface StateSchema {
     // Асинронные редюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

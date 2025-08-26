@@ -1,16 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
-import ArticleDetailsPage from './ArticleDetailsPage';
-import { Article } from 'entities/Article';
+import { ArticleDetails } from './ArticleDetails';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Error } from '../../../../shared/ui/Text/Text.stories';
 import {
+    Article,
     ArticleBlockType,
     ArticleType,
 } from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-} satisfies Meta<typeof ArticleDetailsPage>;
+    title: 'entities/ArticleDetails',
+    component: ArticleDetails,
+} satisfies Meta<typeof ArticleDetails>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -87,11 +88,39 @@ const article: Article = {
 };
 
 export const Normal: Story = {
-    args: {},
+    args: {
+        id: article.id,
+    },
     decorators: [
         StoreDecorator({
             articleDetails: {
                 data: article,
+            },
+        }),
+    ],
+};
+
+export const Loading: Story = {
+    args: {
+        id: article.id,
+    },
+    decorators: [
+        StoreDecorator({
+            articleDetails: {
+                isLoading: true,
+            },
+        }),
+    ],
+};
+
+export const isError: Story = {
+    args: {
+        id: article.id,
+    },
+    decorators: [
+        StoreDecorator({
+            articleDetails: {
+                error: 'error',
             },
         }),
     ],
