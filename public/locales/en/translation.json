@@ -45,5 +45,7 @@
   "Произошла ошибка при загрузке статьи": "There was an error loading the article",
   "Статьи": "Articles",
   "Комментарии": "Comments",
-  "Комментарии отсутствуют": "No comments"
+  "Комментарии отсутствуют": "No comments",
+  "Введите текст коментария": " Enter comment text",
+  "Отправить": "Send"
 }

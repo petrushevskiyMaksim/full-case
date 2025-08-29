@@ -111,6 +111,30 @@
             "text": "a comment   3",
             "articleId": "1",
             "userId": "1"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "asfasf",
+            "id": "jKbC66V"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "asfasf11242135235",
+            "id": "oWg1RMj"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "asfasfasf",
+            "id": "XM7To3-"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "asfasf",
+            "id": "pijMgq4"
         }
     ],
     "users": [
@@ -129,14 +153,28 @@
             "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg"
         }
     ],
-    "profile": {
-        "firstname": "Максим",
-        "lastname": "Петрушевский",
-        "age": 35,
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Tymen",
-        "username": "admin",
-        "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg"
-    }
+    "profile": [
+        {
+            "id": "1",
+            "firstname": "Максим",
+            "lastname": "Петрушевский",
+            "age": 35,
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Tymen",
+            "username": "admin",
+            "avatar": "https://image.api.playstation.com/vulcan/img/cfn/11307j6TBTzh7g71otrP_J9tbJwdxhcdmbhtkAuDqYPjhIIwkP3__rOS_rI4g76oypwQ4nvKeCcN5KkAhjF-FRmoeiwp0YjB.png?w=440&thumb=false"
+        },
+        {
+            "id": "2",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "age": 35,
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Tymen",
+            "username": "user",
+            "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg"
+        }
+    ]
 }

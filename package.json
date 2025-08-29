@@ -37,6 +37,7 @@
         "@storybook/addon-onboarding": "^9.0.12",
         "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
         "@storybook/react-webpack5": "^9.0.12",
+        "@storybook/test": "^9.0.0-alpha.2",
         "@svgr/webpack": "^8.1.0",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.6.3",
