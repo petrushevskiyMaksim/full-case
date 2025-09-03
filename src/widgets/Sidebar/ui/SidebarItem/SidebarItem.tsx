@@ -1,4 +1,4 @@
-import { SidebarItemType } from 'widgets/Sidebar/model/items';
+import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
 import * as cls from './SidebarItem.module.scss';
 import { useTranslation } from 'react-i18next';
 import { AppLink } from 'shared/ui';
