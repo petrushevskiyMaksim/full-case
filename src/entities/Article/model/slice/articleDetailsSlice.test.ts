@@ -11,6 +11,10 @@ const mockArticle: Article = {
     views: 1000,
     createAt: '20.08.2025',
     type: [ArticleType.IT, ArticleType.SCIENCE],
+    user: {
+        id: '1',
+        username: 'max',
+    },
     blocks: [
         {
             id: '1',

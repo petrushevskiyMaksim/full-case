@@ -1,0 +1,19 @@
+.BIG {
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+.SMALL {
+    display: flex;
+
+    // gap: 20px 10px;
+    flex-wrap: wrap;
+
+    // justify-content: space-between;
+    .card {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 30px;
+    }
+}
