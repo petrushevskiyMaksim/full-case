@@ -4,7 +4,7 @@ import {
     PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entities/Article';
+import { Article, ArticleView } from '../../../../entities/Article/model/types/article';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
@@ -23,6 +23,8 @@ const articlesPageSlice = createSlice({
         ids: [],
         entities: {},
         view: ArticleView.SMALL,
+        page: 1,
+        hasMore: true,
     }),
     reducers: {
         seView: (state, action: PayloadAction<ArticleView>) => {
@@ -32,10 +34,17 @@ const articlesPageSlice = createSlice({
                 action.payload
             );
         },
+
+        sePage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
+        },
+
         initState: (state) => {
-            state.view = localStorage.getItem(
+            const view = localStorage.getItem(
                 ARTICLES_VIEW_LOCALSTORAGE_KEY
             ) as ArticleView;
+            state.view = view;
+            state.limit = view === ArticleView.BIG ? 4 : 9;
         },
     },
     extraReducers: (builder) => {
@@ -49,7 +58,8 @@ const articlesPageSlice = createSlice({
                 fetchArticlesList.fulfilled,
                 (state, action: PayloadAction<Article[]>) => {
                     state.isLoading = false;
-                    articlesAdapter.setAll(state, action.payload);
+                    articlesAdapter.addMany(state, action.payload);
+                    state.hasMore = action.payload.length > 0;
                 }
             )
 
