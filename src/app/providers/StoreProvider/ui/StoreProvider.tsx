@@ -14,13 +14,15 @@ interface StoreProviderProps {
 export const StoreProvider = (props: StoreProviderProps) => {
     const { children, initialState, asyncReducers } = props;
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const store = createReduxStore(
         initialState as StateSchema,
-        asyncReducers as ReducersMapObject<StateSchema>,
-        navigate
+        asyncReducers as ReducersMapObject<StateSchema>
+        // navigate
     );
+
+    console.log('RENDERRR !!!');
 
     return <Provider store={store}>{children}</Provider>;
 };
