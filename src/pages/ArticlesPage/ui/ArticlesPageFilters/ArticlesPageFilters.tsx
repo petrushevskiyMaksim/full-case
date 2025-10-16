@@ -22,7 +22,7 @@ import { Input } from 'shared/ui/Input/Input';
 import {
     ArticleSortField,
     ArticleType,
-} from 'entities/Article/model/types/article';
+} from '../../../../entities/Article/model/types/article';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
