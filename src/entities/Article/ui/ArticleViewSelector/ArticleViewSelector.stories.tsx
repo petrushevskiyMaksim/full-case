@@ -3,7 +3,7 @@ import { ArticleViewSelector } from './ArticleViewSelector';
 import { ArticleView } from 'entities/Article/model/types/article';
 
 const meta = {
-    title: 'shared/ArticleViewSelector',
+    title: 'entities/Article/ArticleViewSelector',
     component: ArticleViewSelector,
 } satisfies Meta<typeof ArticleViewSelector>;
 

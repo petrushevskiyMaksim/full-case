@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { ArticleDetails } from './ArticleDetails';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Error } from '../../../../shared/ui/Text/Text.stories';
 import {
     Article,
     ArticleBlockType,
@@ -9,7 +8,7 @@ import {
 } from 'entities/Article/model/types/article';
 
 const meta = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
 } satisfies Meta<typeof ArticleDetails>;
 

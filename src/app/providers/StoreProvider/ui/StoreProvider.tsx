@@ -4,7 +4,6 @@ import { StateSchema } from '../config/StateSchema';
 import { ReactNode } from 'react';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
-
 interface StoreProviderProps {
     children?: ReactNode;
     initialState?: DeepPartial<StateSchema>;
@@ -21,8 +20,6 @@ export const StoreProvider = (props: StoreProviderProps) => {
         asyncReducers as ReducersMapObject<StateSchema>
         // navigate
     );
-
-    console.log('RENDERRR !!!');
 
     return <Provider store={store}>{children}</Provider>;
 };

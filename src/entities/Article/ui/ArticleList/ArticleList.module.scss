@@ -6,14 +6,8 @@
 
 .SMALL {
     display: flex;
-
-    // gap: 20px 10px;
+    gap: 30px;
     flex-wrap: wrap;
 
     // justify-content: space-between;
-    .card {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 30px;
-    }
 }
