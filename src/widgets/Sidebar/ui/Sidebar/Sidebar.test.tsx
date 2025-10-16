@@ -20,7 +20,7 @@ describe('Sidebar', () => {
         // Проверяем, что sidebar изначально не свернут
         expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed');
         fireEvent.click(toggleBtn);
-        screen.debug();
+        // screen.debug();
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
     });
 });

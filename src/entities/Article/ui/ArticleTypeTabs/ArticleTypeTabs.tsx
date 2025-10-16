@@ -1,4 +1,3 @@
-import * as cls from './ArticleTypeTabs.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';

@@ -1,9 +1,7 @@
 import * as cls from './ArticlesPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ArticleList, ArticleViewSelector } from 'entities/Article';
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleList } from 'entities/Article';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -36,7 +34,6 @@ const reducers: ReducersList = {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);

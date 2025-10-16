@@ -1,6 +1,5 @@
 import * as cls from './CommentCard.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Commentary } from '../../model/types/commentary';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -17,7 +16,6 @@ interface CommentCardProps {
 
 export const CommentCard = memo((props: CommentCardProps) => {
     const { className, comment, isLoading } = props;
-    const { t } = useTranslation();
 
     if (isLoading) {
         return (

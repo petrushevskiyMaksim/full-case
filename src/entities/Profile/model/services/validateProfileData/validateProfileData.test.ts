@@ -1,5 +1,4 @@
 import { validateProfileData } from './validateProfileData';
-import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk';
 import { Country } from '../../../../Country/model/types/country';
 import { Currency } from '../../../../Currency/model/types/currency';
 import { ValidateProfileErrors } from '../../types/profile';
