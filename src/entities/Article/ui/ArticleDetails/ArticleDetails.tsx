@@ -24,7 +24,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import {
     ArticleBlock,
     ArticleBlockType,
-} from 'entities/Article/model/types/article';
+} from '../../../../entities/Article/model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponents } from '../ArticleImageBlockComponents/ArticleImageBlockComponents';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
