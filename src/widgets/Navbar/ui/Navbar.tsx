@@ -42,7 +42,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
-                    className={cls.createBtn}
                     to={RoutePath.articles_create}
                     theme={AppLinkTheme.INVERTED}
                 >
