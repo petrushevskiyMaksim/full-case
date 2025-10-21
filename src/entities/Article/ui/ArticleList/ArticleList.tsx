@@ -1,11 +1,18 @@
 import * as cls from './ArticleList.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, HTMLAttributeAnchorTarget } from 'react';
+import { memo, HTMLAttributeAnchorTarget, JSX } from 'react';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import {
+    AutoSizer,
+    List,
+    ListRowProps,
+    WindowScroller,
+} from 'react-virtualized';
+import { PAGE_ID } from 'widgets/Page/Page';
 
 interface ArticleListProps {
     articles: Article[];
@@ -37,17 +44,48 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
     const { t } = useTranslation();
 
-    const renderArticle = (article: Article) => {
+    const isBig = view === ArticleView.BIG;
+
+    const itemsPerRow = isBig ? 1 : 3;
+    const rowCount = isBig
+        ? articles.length
+        : Math.ceil(articles.length / itemsPerRow);
+
+    const rowRender = ({ index, isScrolling, key, style }: ListRowProps) => {
+        const items: JSX.Element[] = [];
+        const fromIndex = index * itemsPerRow;
+        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
+
+        for (let i = fromIndex; i < toIndex; i++) {
+            items.push(
+                <ArticleListItem
+                    className={cls.card}
+                    article={articles[i]}
+                    view={view}
+                    target={target}
+                    key={`str${i}`}
+                />
+            );
+        }
+
         return (
-            <ArticleListItem
-                className={cls.card}
-                article={article}
-                view={view}
-                key={article.id}
-                target={target}
-            />
+            <div key={key} style={style} className={cls.row}>
+                {items}
+            </div>
         );
     };
+
+    // const renderArticle = (article: Article) => {
+    //     return (
+    //         <ArticleListItem
+    //             className={cls.card}
+    //             article={article}
+    //             view={view}
+    //             key={article.id}
+    //             target={target}
+    //         />
+    //     );
+    // };
 
     if (!isLoading && !articles.length) {
         return (
@@ -58,9 +96,38 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames('', {}, [className, cls[view]])}>
-            {articles?.length > 0 ? articles?.map(renderArticle) : null}
-            {isLoading && getSkeletons(view)}
-        </div>
+        <WindowScroller
+            onScroll={() => console.log('scroll')}
+            scrollElement={document.getElementById(PAGE_ID) as Element}
+        >
+            {({
+                height,
+                width,
+                registerChild,
+                onChildScroll,
+                scrollTop,
+                isScrolling,
+            }) => (
+                <div
+                    ref={registerChild}
+                    className={classNames('', {}, [className, cls[view]])}
+                >
+                    <List
+                        height={height ?? 700}
+                        width={width ? width - 80 : 700}
+                        rowCount={rowCount}
+                        rowHeight={isBig ? 700 : 330}
+                        rowRenderer={rowRender}
+                        autoHeight
+                        onScroll={onChildScroll}
+                        isScrolling={isScrolling}
+                        scrollTop={scrollTop}
+                    />
+
+                    {/* {articles?.length > 0 ? articles?.map(renderArticle) : null} */}
+                    {isLoading && getSkeletons(view)}
+                </div>
+            )}
+        </WindowScroller>
     );
 });

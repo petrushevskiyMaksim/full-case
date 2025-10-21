@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from 'shared/config/tests/componentRender/componentRender';
-import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
+import { Sidebar } from '../../ui/Sidebar/Sidebar';
 
 jest.mock('./Sidebar.module.scss', () => ({
     __esModule: true,

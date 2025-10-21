@@ -599,6 +599,12 @@
       "userId": "1",
       "text": "rtey",
       "id": "p04ihcE"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "text": "asfasf",
+      "id": "CO5ugwN"
     }
   ],
   "users": [
@@ -623,8 +629,8 @@
       "firstname": "Максим",
       "lastname": "Петрушевский",
       "age": 35,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "EUR",
+      "country": "Belarus",
       "city": "Tymen",
       "username": "admin",
       "avatar": "https://image.api.playstation.com/vulcan/img/cfn/11307j6TBTzh7g71otrP_J9tbJwdxhcdmbhtkAuDqYPjhIIwkP3__rOS_rI4g76oypwQ4nvKeCcN5KkAhjF-FRmoeiwp0YjB.png?w=440&thumb=false"

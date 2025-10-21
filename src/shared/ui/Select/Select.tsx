@@ -39,7 +39,9 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         });
     }, [options]);
 
-    const mods: Mods = {};
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
 
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>

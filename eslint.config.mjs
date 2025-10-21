@@ -8,6 +8,9 @@ import pluginReact from 'eslint-plugin-react';
 import i18next from 'eslint-plugin-i18next';
 import { defineConfig } from 'eslint/config';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import maxPlugin from 'eslint-plugin-max-plugin-path-checker';
+console.log(maxPlugin);
+
 
 export default defineConfig([
     // Base Config
@@ -22,7 +25,6 @@ export default defineConfig([
 
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-        // languageOptions: { globals: globals.browser },
         languageOptions: {
             globals: {
                 ...globals.browser, // сохраняем существующие браузерные глобалы
@@ -81,6 +83,12 @@ export default defineConfig([
             '@typescript-eslint/no-require-imports': 'off',
             '@typescript-eslint/no-var-requires': 'off',
             'no-undef': 'off',
+        },
+    },
+    {
+        plugins: { 'max-plugin': maxPlugin },
+        rules: {
+            'max-plugin/path-cheker': 'error',
         },
     },
 ]);

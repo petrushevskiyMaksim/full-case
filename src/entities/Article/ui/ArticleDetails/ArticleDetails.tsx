@@ -21,11 +21,8 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import {
-    ArticleBlock,
-    ArticleBlockType,
-} from '../../model/types/article';
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '..//ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponents } from '../ArticleImageBlockComponents/ArticleImageBlockComponents';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
@@ -79,7 +76,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }, []);
 
     useEffect(() => {
-        if(__PROJECT__ !== 'storybook') {
+        if (__PROJECT__ !== 'storybook') {
             dispatch(fetchArticleById(id));
         }
     }, [dispatch, id]);
