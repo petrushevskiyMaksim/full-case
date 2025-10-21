@@ -9,6 +9,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
         entry: '',
         html: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: '',
     };
 
     // 1. Критическое изменение - устанавливаем приоритет src

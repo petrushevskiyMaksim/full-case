@@ -11,8 +11,8 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { updateProfileData } from '../../../../entities/Profile';
-import * as cls from './ProfilePageHeader.module.scss';
 import { getUserAuthData } from 'entities/User';
+import { HStack } from 'shared/ui/Stack';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -40,22 +40,26 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack
+            max
+            justify='between'
+            className={classNames('', {}, [className])}
+        >
             <Text title={t('Профиль')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <>
                     {readonly ? (
                         <Button
-                            className={cls.editBtn}
+                            className={''}
                             theme={ButtonTheme.OUTLINE}
                             onClick={onEdit}
                         >
                             {t('Редактировать')}
                         </Button>
                     ) : (
-                        <>
+                        <HStack gap='8'>
                             <Button
-                                className={cls.editBtn}
+                                className={''}
                                 theme={ButtonTheme.OUTLINE_RED}
                                 onClick={onCancelEdit}
                             >
@@ -68,10 +72,10 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             >
                                 {t('Сохранить')}
                             </Button>
-                        </>
+                        </HStack>
                     )}
-                </div>
+                </>
             )}
-        </div>
+        </HStack>
     );
 };
