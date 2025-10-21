@@ -13,6 +13,7 @@ import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
 
 interface FetchArticlesListProps {
     replace?: boolean;
+    page?: number;
 }
 
 export const fetchArticlesList = createAsyncThunk<
