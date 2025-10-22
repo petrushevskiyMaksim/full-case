@@ -96,9 +96,12 @@
         "webpack-env": "^0.8.0"
     },
     "dependencies": {
+        "@headlessui/react": "^2.2.9",
+        "@heroicons/react": "^2.2.0",
         "@reduxjs/toolkit": "^2.8.2",
         "axios": "^1.10.0",
         "babel-loader": "^10.0.0",
+        "heroicons": "^2.2.0",
         "i18next": "^25.2.1",
         "i18next-browser-languagedetector": "^8.1.0",
         "i18next-http-backend": "^3.0.2",
