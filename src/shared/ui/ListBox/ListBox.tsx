@@ -1,17 +1,16 @@
 import * as cls from './ListBox.module.scss';
 import {
-    Field,
     Listbox as HListBox,
-    Label,
     ListboxButton,
     ListboxOption,
     ListboxOptions,
 } from '@headlessui/react';
-import { Fragment, ReactNode, useEffect, useRef, useState } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { classNames } from '../../lib/classNames/classNames';
 import { HStack } from '../Stack';
 import { Button } from '../Button/Button';
+import { DropdownDirection } from 'shared/types/ui';
 
 export interface ListBoxItem {
     value: string;
@@ -27,23 +26,34 @@ interface ListBoxProps {
     onChange: (value: string) => void;
     readonly?: boolean;
     label?: string;
+    direction?: DropdownDirection;
 }
 
-export function ListBox(props: ListBoxProps) {
-    const { className, items, value, defaultValue, onChange, readonly, label } =
-        props;
-    const triggerRef = useRef<HTMLButtonElement>(null);
-    const [width, setWidth] = useState<number>(0);
+const mapDirectionClass: Record<DropdownDirection, string> = {
+    'bottom left': cls.optionsBottomLeft,
+    'bottom right': cls.optionsBottomRight,
+    'top left': cls.optionsTopLeft,
+    'top right': cls.optionsTopRight,
+};
 
-    useEffect(() => {
-        if (triggerRef.current) {
-            setWidth(triggerRef.current.offsetWidth);
-        }
-    }, []);
+export function ListBox(props: ListBoxProps) {
+    const {
+        className,
+        items,
+        value,
+        defaultValue,
+        onChange,
+        readonly,
+        label,
+        direction = 'bottom left',
+    } = props;
+
+    const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <Field className={cls.listboxWrapper}>
-            {label && <Label className={cls.label}>{`${label} >`}</Label>}
+        // <Field as={Fragment}>
+        <HStack gap='8'>
+            {label && <span>{`${label} >`}</span>}
             <HListBox
                 className={classNames(cls.ListBox, {}, [className])}
                 as={'div'}
@@ -52,16 +62,16 @@ export function ListBox(props: ListBoxProps) {
                 disabled={readonly}
             >
                 <ListboxButton
+                    className={cls.trigger}
                     disabled={readonly}
-                    ref={triggerRef}
-                    as={Fragment}
+                    // as={Fragment}
                 >
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </ListboxButton>
                 <ListboxOptions
-                    className={cls.options}
-                    style={{ width }}
-                    anchor={{ to: 'bottom start' }}
+                    portal={false}
+                    className={classNames(cls.options, {}, optionsClasses)}
+                    // anchor={{ to: 'bottom start' }}
                 >
                     {items?.map((item) => (
                         <ListboxOption
@@ -93,6 +103,7 @@ export function ListBox(props: ListBoxProps) {
                     ))}
                 </ListboxOptions>
             </HListBox>
-        </Field>
+        </HStack>
+        // </Field>
     );
 }

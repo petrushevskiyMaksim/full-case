@@ -10,6 +10,9 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink } from 'shared/ui';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { href } from 'react-router-dom';
 
 interface NavbarProps {
     className?: string;
@@ -33,6 +36,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const items = [
+        { content: t('Выйти'), onClick: onLogout },
+        { content: t('Профиль'), href: RoutePath.profile + authDate?.id },
+    ];
+
     if (authDate) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -47,13 +55,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t('Выйти')}
-                </Button>
+
+                <Dropdown
+                    direction='bottom left'
+                    className={cls.dropdown}
+                    items={items}
+                    trigger={<Avatar size={30} src={authDate.avatar} />}
+                />
             </header>
         );
     }

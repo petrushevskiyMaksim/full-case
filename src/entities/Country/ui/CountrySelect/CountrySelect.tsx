@@ -38,6 +38,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             defaultValue={t('Укажите страну')}
             onChange={onChangeHandler}
             readonly={readonly}
+            direction='top left'
         ></ListBox>
     );
 });
