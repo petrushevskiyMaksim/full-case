@@ -11,7 +11,6 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import maxPlugin from 'eslint-plugin-max-plugin-path-checker';
 console.log(maxPlugin);
 
-
 export default defineConfig([
     // Base Config
     {
@@ -78,7 +77,7 @@ export default defineConfig([
     },
 
     {
-        files: ['json-server/**/*.js'],
+        files: ['json-server/**/*.js', 'scripts/**/*.js'],
         rules: {
             '@typescript-eslint/no-require-imports': 'off',
             '@typescript-eslint/no-var-requires': 'off',

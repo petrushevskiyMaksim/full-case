@@ -63,6 +63,23 @@ export function Dropdown(props: DropdownProps) {
                 portal={false}
             >
                 {items.map((item) => {
+                    const context = (item, focus) => {
+                        return (
+                            <button
+                                type='button'
+                                disabled={item.disabled}
+                                onClick={item.onClick}
+                                className={classNames(
+                                    cls.item,
+                                    { [cls.focus]: focus },
+                                    []
+                                )}
+                            >
+                                {item.content}
+                            </button>
+                        );
+                    };
+
                     if (item.href) {
                         return (
                             <MenuItem
@@ -70,40 +87,14 @@ export function Dropdown(props: DropdownProps) {
                                 to={item.href}
                                 disabled={item.disabled}
                             >
-                                {({ focus }) => (
-                                    <button
-                                        type='button'
-                                        disabled={item.disabled}
-                                        onClick={item.onClick}
-                                        className={classNames(
-                                            cls.item,
-                                            { [cls.focus]: focus },
-                                            []
-                                        )}
-                                    >
-                                        {item.content}
-                                    </button>
-                                )}
+                                {({ focus }) => context(item, focus)}
                             </MenuItem>
                         );
                     }
 
                     return (
                         <MenuItem as={Fragment} disabled={item.disabled}>
-                            {({ focus }) => (
-                                <button
-                                    type='button'
-                                    disabled={item.disabled}
-                                    onClick={item.onClick}
-                                    className={classNames(
-                                        cls.item,
-                                        { [cls.focus]: focus },
-                                        []
-                                    )}
-                                >
-                                    {item.content}
-                                </button>
-                            )}
+                            {({ focus }) => context(item, focus)}
                         </MenuItem>
                     );
                 })}
