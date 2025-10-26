@@ -62,10 +62,11 @@ export function ListBox(props: ListBoxProps) {
                 disabled={readonly}
             >
                 <ListboxButton
-                    className={cls.trigger}
+                    // className={cls.trigger}
                     disabled={readonly}
-                    // as={Fragment}
+                    as={Fragment}
                 >
+                    {/* {value ?? defaultValue} */}
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </ListboxButton>
                 <ListboxOptions

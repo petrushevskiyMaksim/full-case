@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { UI } from './UI';
 
 const meta = {
-    title: 'shared/UI',
+    title: 'features/UI',
     component: UI,
 } satisfies Meta<typeof UI>;
 

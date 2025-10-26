@@ -62,10 +62,11 @@ export function Dropdown(props: DropdownProps) {
                 className={classNames(cls.menu, {}, menuClasses)}
                 portal={false}
             >
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const context = (item, focus) => {
                         return (
                             <button
+                                // key={item.content}
                                 type='button'
                                 disabled={item.disabled}
                                 onClick={item.onClick}
@@ -83,6 +84,7 @@ export function Dropdown(props: DropdownProps) {
                     if (item.href) {
                         return (
                             <MenuItem
+                                key={index}
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
@@ -93,7 +95,11 @@ export function Dropdown(props: DropdownProps) {
                     }
 
                     return (
-                        <MenuItem as={Fragment} disabled={item.disabled}>
+                        <MenuItem
+                            key={index}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
                             {({ focus }) => context(item, focus)}
                         </MenuItem>
                     );

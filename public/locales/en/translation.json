@@ -70,5 +70,7 @@
   "Создать статью": "Create article",
   "тестовый перевод": "testing translit",
   "второй тестовый перевод": "second test translation",
-  "Выберете значение": "choose a value"
+  "Выберете значение": "choose a value",
+  "Профиль не найден": " Profile not found",
+  "Ошибка при загрузке статей": "Error loading articles"
 }

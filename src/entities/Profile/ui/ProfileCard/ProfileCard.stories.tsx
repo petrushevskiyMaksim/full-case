@@ -5,7 +5,7 @@ import { Currency } from 'entities/Currency';
 import avatar from 'shared/assets/tests/avatar.jpg';
 
 const meta = {
-    title: 'entities/ProfileCard',
+    title: 'entities/Profile/ProfileCard',
     component: ProfileCard,
 } satisfies Meta<typeof ProfileCard>;
 
