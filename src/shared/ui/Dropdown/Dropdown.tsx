@@ -66,7 +66,6 @@ export function Dropdown(props: DropdownProps) {
                     const context = (item, focus) => {
                         return (
                             <button
-                                // key={item.content}
                                 type='button'
                                 disabled={item.disabled}
                                 onClick={item.onClick}
