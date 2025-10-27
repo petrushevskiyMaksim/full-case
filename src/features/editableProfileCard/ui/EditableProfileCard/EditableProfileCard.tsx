@@ -2,8 +2,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '../../../../entities/Country';
+import { Currency } from '../../../../entities/Currency';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -14,7 +14,7 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { ProfileCard } from 'entities/Profile';
+import { ProfileCard } from '../../../../entities/Profile';
 import { ValidateProfileErrors } from '../../model/types/editableProfileCardSchema';
 import {
     DynamicModuleLoader,
@@ -149,6 +149,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             key={err}
                             theme={TextTheme.ERROR}
                             text={validateErrorsTranslate[err]}
+                            data-testid={'EditableProfileCard.Error'}
                         />
                     ))}
 

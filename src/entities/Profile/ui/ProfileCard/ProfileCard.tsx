@@ -5,8 +5,10 @@ import { Input } from 'shared/ui/Input/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Currency, CurrencySelect } from 'entities/Currency';
-import { Country, CountrySelect } from 'entities/Country';
+import { Currency } from '../../../Currency/model/types/currency';
+import { CurrencySelect } from '../../../Currency/ui/CurrencySelect/CurrencySelect';
+import { Country } from '../../../Country/model/types/country';
+import { CountrySelect } from '../../../Country/ui/CountrySelect/CountrySelect';
 import * as cls from './ProfileCard.module.scss';
 import { HStack, VStack } from 'shared/ui/Stack';
 
@@ -98,12 +100,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 placeholder={t('Ваше имя')}
                 onChange={onChangeFirstname}
                 readonly={readonly}
+                data-testid={'ProfileCard.firstname'}
             />
             <Input
                 value={data?.lastname}
                 placeholder={t('Ваша фамилия')}
                 onChange={onChangeLastname}
                 readonly={readonly}
+                data-testid={'ProfileCard.lastname'}
             />
             <Input
                 value={data?.age}

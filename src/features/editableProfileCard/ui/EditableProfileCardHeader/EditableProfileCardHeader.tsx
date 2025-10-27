@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData } from '../../../../entities/User/model/selectors/getUserAuthData/getUserAuthData';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { profileActions } from '../../model/slice/profileSlice';
@@ -52,6 +52,9 @@ export const EditableProfileCardHeader = memo(
                                 className={''}
                                 theme={ButtonTheme.OUTLINE}
                                 onClick={onEdit}
+                                data-testid={
+                                    'EditableProfileCardHeader.EditButton'
+                                }
                             >
                                 {t('Редактировать')}
                             </Button>
@@ -61,6 +64,9 @@ export const EditableProfileCardHeader = memo(
                                     className={''}
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
+                                    data-testid={
+                                        'EditableProfileCardHeader.CancelButton'
+                                    }
                                 >
                                     {t('Отменить')}
                                 </Button>
@@ -68,6 +74,9 @@ export const EditableProfileCardHeader = memo(
                                     className={''}
                                     theme={ButtonTheme.OUTLINE}
                                     onClick={onSave}
+                                    data-testid={
+                                        'EditableProfileCardHeader.SaveButton'
+                                    }
                                 >
                                     {t('Сохранить')}
                                 </Button>
