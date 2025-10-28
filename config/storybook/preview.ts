@@ -4,6 +4,10 @@ import { Theme } from '../../src/app/providers/ThemeProvider/lib/ThemeContext';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { initialize, mswLoader } from 'msw-storybook-addon';
+
+initialize();
 
 const preview: Preview = {
     parameters: {
@@ -19,7 +23,9 @@ const preview: Preview = {
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         StoreDecorator(),
+        SuspenseDecorator,
     ],
+    loaders: [mswLoader],
 };
 
 export default preview;

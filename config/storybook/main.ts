@@ -7,10 +7,12 @@ const config: StorybookConfig = {
         '@storybook/addon-docs',
         '@storybook/addon-onboarding',
         '@storybook/addon-test',
+        'msw-storybook-addon',
     ],
     framework: {
         name: '@storybook/react-webpack5',
         options: {},
     },
+    staticDirs: ['../../public'],
 };
 export default config;

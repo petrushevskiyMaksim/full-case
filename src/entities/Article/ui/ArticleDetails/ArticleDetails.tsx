@@ -28,7 +28,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
-    id: string;
+    id?: string;
     className?: string;
 }
 
@@ -46,21 +46,21 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-            case ArticleBlockType.CODE:
-                return (
-                    <ArticleCodeBlockComponent key={block.id} block={block} />
-                );
-            case ArticleBlockType.IMAGE:
-                return (
-                    <ArticleImageBlockComponents key={block.id} block={block} />
-                );
-            case ArticleBlockType.TEXT:
-                return (
-                    <ArticleTextBlockComponent key={block.id} block={block} />
-                );
+        case ArticleBlockType.CODE:
+            return (
+                <ArticleCodeBlockComponent key={block.id} block={block} />
+            );
+        case ArticleBlockType.IMAGE:
+            return (
+                <ArticleImageBlockComponents key={block.id} block={block} />
+            );
+        case ArticleBlockType.TEXT:
+            return (
+                <ArticleTextBlockComponent key={block.id} block={block} />
+            );
 
-            default:
-                return null;
+        default:
+            return null;
         }
     }, []);
 
