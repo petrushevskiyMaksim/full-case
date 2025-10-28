@@ -72,5 +72,7 @@
   "второй тестовый перевод": "second test translation",
   "Выберете значение": "choose a value",
   "Профиль не найден": " Profile not found",
-  "Ошибка при загрузке статей": "Error loading articles"
+  "Ошибка при загрузке статей": "Error loading articles",
+  "Админ панель": " Admin panel",
+  "У вас нет доступа к этой странице": "You do not have access to this page"
 }

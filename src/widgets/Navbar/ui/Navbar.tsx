@@ -5,14 +5,18 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from '../../../entities/User';
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from '../../../entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink } from 'shared/ui';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { href } from 'react-router-dom';
 
 interface NavbarProps {
     className?: string;
@@ -23,6 +27,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const dispatch = useDispatch();
     const authDate = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -36,9 +42,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     const items = [
-        { content: t('Выйти'), onClick: onLogout },
+        ...(isAdminPanelAvailable
+            ? [{ content: t('Админка'), href: RoutePath.admin_panel }]
+            : []),
+
         { content: t('Профиль'), href: RoutePath.profile + authDate?.id },
+
+        { content: t('Выйти'), onClick: onLogout },
     ];
 
     if (authDate) {
