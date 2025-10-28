@@ -46,30 +46,21 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.CODE:
-            return (
-                <ArticleCodeBlockComponent
-                    key={block.id}
-                    block={block}
-                />
-            );
-        case ArticleBlockType.IMAGE:
-            return (
-                <ArticleImageBlockComponents
-                    key={block.id}
-                    block={block}
-                />
-            );
-        case ArticleBlockType.TEXT:
-            return (
-                <ArticleTextBlockComponent
-                    key={block.id}
-                    block={block}
-                />
-            );
+            case ArticleBlockType.CODE:
+                return (
+                    <ArticleCodeBlockComponent key={block.id} block={block} />
+                );
+            case ArticleBlockType.IMAGE:
+                return (
+                    <ArticleImageBlockComponents key={block.id} block={block} />
+                );
+            case ArticleBlockType.TEXT:
+                return (
+                    <ArticleTextBlockComponent key={block.id} block={block} />
+                );
 
-        default:
-            return null;
+            default:
+                return null;
         }
     }, []);
 
@@ -83,25 +74,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <>
+            <VStack max gap='16'>
                 <Skeleton
                     className={cls.avatar}
                     width={200}
                     height={200}
                     border='50%'
                 />
-                <Skeleton  width={300} height={32} />
-                <Skeleton  width={500} height={32} />
-                <Skeleton
-                    
-                    width={'100%'}
-                    height={200}
-                />
-                <Skeleton
-                    width={'100%'}
-                    height={200}
-                />
-            </>
+                <Skeleton width={300} height={32} />
+                <Skeleton width={500} height={32} />
+                <Skeleton width={'100%'} height={200} />
+                <Skeleton width={'100%'} height={200} />
+            </VStack>
         );
     } else if (error) {
         content = (
@@ -144,6 +128,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <VStack
                 gap='16'
+                max
                 className={classNames(cls.ArticleDetails, {}, [className])}
             >
                 {content}
