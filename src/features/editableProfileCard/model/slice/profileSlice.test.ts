@@ -1,9 +1,9 @@
 import { profileActions, profileReducer } from './profileSlice';
-import { ValidateProfileErrors } from '../types/editableProfileCardSchema';
 import { ProfileSchema } from '../types/editableProfileCardSchema';
 import { Country } from '../../../../entities/Country/model/types/country';
 import { Currency } from '../../../../entities/Currency/model/types/currency';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { ValidateProfileErrors } from '../consts/consts';
 
 const data = {
     firstname: 'max',

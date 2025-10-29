@@ -1,7 +1,7 @@
 import { validateProfileData } from './validateProfileData';
 import { Country } from '../../../../../entities/Country/model/types/country';
 import { Currency } from '../../../../../entities/Currency/model/types/currency';
-import { ValidateProfileErrors } from '../../types/editableProfileCardSchema';
+import { ValidateProfileErrors } from '../../consts/consts';
 
 const data = {
     firstname: 'max',

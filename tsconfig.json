@@ -9,7 +9,7 @@
         "module": "ESNext",
         // В какую спецификацию компилируем: для поддержки большинства браузеров
         "target": "es5",
-        // Что бы мы могла писать react компоненты - return <div>'Heloo'</div>
+        // Что бы мы могли писать react компоненты - return <div>'Heloo'</div>
         "jsx": "react-jsx",
         // Компилятор будет обрабатывать не только TS файлы но и JS файлы
         "allowJs": true,
@@ -29,13 +29,14 @@
         // без флага "esModuleInterop": true результат undefined
         // с флагом [object Object]
         "esModuleInterop": true,
-        // Если какаыя либо библиотека не имеет default import,
+        // Если какая либо библиотека не имеет default import,
         // лоадеры вроде ts-loader или bable-loader автоматически создают их
         // вместо такого импорта
         // import * as React from 'react';
         // можно писать такой
         // import React from 'react';
         "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
     },
     "ts-node": {
         "compilerOptions": {

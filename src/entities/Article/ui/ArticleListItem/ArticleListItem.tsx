@@ -1,13 +1,10 @@
 import * as cls from './ArticleListItem.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import {
-    Article,
-    ArticleBlockType,
-    ArticleTextBlock,
-    ArticleView,
-} from '../../model/types/article';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import type { Article } from '../../model/types/article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import type { ArticleTextBlock } from '../../model/types/article';
 import { Text } from 'shared/ui/Text/Text';
 import IconEye from 'shared/assets/icons/eye-20-20.svg';
 import { Icon } from 'shared/ui/Icon/Icon';

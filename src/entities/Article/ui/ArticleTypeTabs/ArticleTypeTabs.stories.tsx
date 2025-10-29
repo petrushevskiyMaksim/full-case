@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
-import { ArticleType } from '../../model/types/article';
 import { fn } from '@storybook/test';
+import { ArticleType } from '../../model/consts/consts';
 
 const meta = {
     title: 'entities/Article/ArticleTypeTabs',

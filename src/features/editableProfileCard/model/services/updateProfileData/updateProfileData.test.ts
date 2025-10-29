@@ -2,7 +2,7 @@ import { updateProfileData } from './updateProfileData';
 import { TestAsyncThunk } from 'shared/config/tests/TestAsyncThunk/TestAsyncThunk';
 import { Country } from '../../../../../entities/Country/model/types/country';
 import { Currency } from '../../../../../entities/Currency/model/types/currency';
-import { ValidateProfileErrors } from '../../types/editableProfileCardSchema';
+import { ValidateProfileErrors } from '../../consts/consts';
 
 const data = {
     firstname: 'max',
