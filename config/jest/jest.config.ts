@@ -45,7 +45,7 @@ const config: Config = {
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        // '^.+\\.module\\.(css|scss)$': 'identity-obj-proxy',
+        '^entities/(.*)$': '<rootDir>/src/entities/$1',
     },
     testMatch: [
         // '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
