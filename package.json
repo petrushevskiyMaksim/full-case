@@ -17,7 +17,8 @@
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
         "build-storybook": "storybook build -c ./config/storybook",
         "chromatic": "npx chromatic --project-token=chpt_6d14f485e5f3335 --build-script-name=build-storybook",
-        "generate:slice": "node scripts/createSlice/index.js"
+        "generate:slice": "node scripts/createSlice/index.js",
+        "ci:dev": "npm run lint:ts && npm run lint:scss && npm run test:jest && npm run chromatic"
     },
     "keywords": [],
     "author": "",

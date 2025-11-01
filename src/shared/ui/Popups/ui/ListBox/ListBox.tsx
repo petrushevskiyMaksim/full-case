@@ -46,14 +46,10 @@ export function ListBox(props: ListBoxProps) {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        // <Field as={Fragment}>
         <HStack gap='8'>
             {label && <span>{`${label} >`}</span>}
             <HListBox
-                className={classNames(cls.ListBox, {}, [
-                    className,
-                    popupCls.popup,
-                ])}
+                className={classNames('', {}, [className, popupCls.popup])}
                 as={'div'}
                 value={value}
                 onChange={onChange}
