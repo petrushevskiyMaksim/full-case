@@ -1,4 +1,3 @@
-import * as cls from './AvatarDropdown.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
@@ -48,7 +47,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
     return (
         <Dropdown
-            className={classNames(cls.AvatarDropdown, {}, [className])}
+            className={classNames('', {}, [className])}
             direction='bottom left'
             items={items}
             trigger={<Avatar size={30} src={authData.avatar} />}

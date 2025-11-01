@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Popover } from './Popover';
+// import { Button, ButtonTheme } from '../../../Button/Button';
+// import { Icon } from '../../../Icon/Icon';
+// import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
 
 const meta = {
-    title: 'shared/ListBox',
+    title: 'shared/Popover',
     component: Popover,
     decorators: [
         (Story) => (
@@ -18,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const BottomLeft: Story = {
     args: {
-        children: <div></div>,
+        children: <span>{'popover'}</span>,
         direction: 'bottom left',
     },
 };
@@ -26,20 +29,20 @@ export const BottomLeft: Story = {
 export const BottomRight: Story = {
     args: {
         direction: 'bottom right',
-        children: <div></div>,
+        children: <span>{'popover'}</span>,
     },
 };
 
 export const TopLeft: Story = {
     args: {
         direction: 'top left',
-        children: <div></div>,
+        children: <span>{'popover'}</span>,
     },
 };
 
 export const TopRight: Story = {
     args: {
         direction: 'top right',
-        children: <div></div>,
+        children: <span>{'popover'}</span>,
     },
 };

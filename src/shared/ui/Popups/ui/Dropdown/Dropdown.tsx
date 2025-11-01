@@ -37,14 +37,6 @@ export function Dropdown(props: DropdownProps) {
         >
             <MenuButton className={cls.trigger}>
                 {trigger ? trigger : 'Menu'}
-                {/* {({ active }) => (
-                    <Button
-                        theme={active ? ButtonTheme.OUTLINE : ButtonTheme.CLEAR}
-                        className={classNames(cls.btn, {}, [])}
-                    >
-                        {trigger ? trigger : 'Menu'}
-                    </Button>
-                )} */}
             </MenuButton>
             <MenuItems
                 className={classNames(cls.menu, {}, menuClasses)}
