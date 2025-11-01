@@ -5,7 +5,8 @@
 @use 'themes/violet';
 
 .app,
-.app_modal {
+.app_modal,
+.app_drawer {
     font: var(--font-m);
     color: var(--primary-color);
 }
@@ -19,6 +20,7 @@
     display: flex;
 }
 
+// scrollbar
 *::-webkit-scrollbar {
     width: 12px; /* ширина scrollbar */
     height: 8px; /* ширина scrollbar */
