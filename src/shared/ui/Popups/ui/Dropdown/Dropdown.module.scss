@@ -1,28 +1,26 @@
-.Dropdown {
-    position: relative;
-}
-
-.btn {
+.trigger {
     background: none;
     border: none;
     outline: none;
     padding: 0;
     margin: 0;
-    cursor: pointer;
-    width: 34px;
-    height: 34px;
+
+    // width: 34px;
+    // height: 34px;
 
     &:hover {
-        border: 2px solid var(--inverted-primary-color);
-        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.7;
     }
 }
 
 .menu {
     position: absolute;
     background: var(--card-bg);
+    outline: none;
     z-index: 10000;
     border-radius: 8px;
+    overflow: hidden;
     border: 1px solid var(--primary-color);
     display: flex;
     flex-direction: column;
@@ -39,28 +37,6 @@
 }
 
 // .active {
+//     border: 1px solid var(--inverted-primary-color);
+//     border-radius: 50%;
 // }
-
-.focus {
-    background: var(--inverted-primary-color);
-}
-
-.optionsBottomLeft {
-    top: 100%;
-    right: 0;
-}
-
-.optionsBottomRight {
-    top: 100%;
-    left: 0;
-}
-
-.optionsTopLeft {
-    bottom: 100%;
-    right: 0;
-}
-
-.optionsTopRight {
-    bottom: 100%;
-    left: 0;
-}

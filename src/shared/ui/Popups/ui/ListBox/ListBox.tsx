@@ -7,10 +7,12 @@ import {
 } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
-import { classNames } from '../../lib/classNames/classNames';
-import { HStack } from '../Stack';
-import { Button } from '../Button/Button';
 import { DropdownDirection } from 'shared/types/ui';
+import { HStack } from '../../../Stack';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from '../../../Button/Button';
+import { mapDirectionClass } from '../../styles/consts';
+import * as popupCls from '../../styles/popups.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -28,13 +30,6 @@ interface ListBoxProps {
     label?: string;
     direction?: DropdownDirection;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
-    'top right': cls.optionsTopRight,
-};
 
 export function ListBox(props: ListBoxProps) {
     const {
@@ -55,7 +50,10 @@ export function ListBox(props: ListBoxProps) {
         <HStack gap='8'>
             {label && <span>{`${label} >`}</span>}
             <HListBox
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames(cls.ListBox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 as={'div'}
                 value={value}
                 onChange={onChange}
@@ -86,8 +84,8 @@ export function ListBox(props: ListBoxProps) {
                                     className={classNames(
                                         cls.item,
                                         {
-                                            [cls.focus]: focus,
-                                            [cls.disabled]: item.disabled,
+                                            [popupCls.focus]: focus,
+                                            [popupCls.disabled]: item.disabled,
                                         },
                                         []
                                     )}

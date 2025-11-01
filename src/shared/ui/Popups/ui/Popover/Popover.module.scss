@@ -1,0 +1,11 @@
+.Popover {
+    font-size: 22;
+}
+
+.panel {
+    position: absolute;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    z-index: 10000;
+}

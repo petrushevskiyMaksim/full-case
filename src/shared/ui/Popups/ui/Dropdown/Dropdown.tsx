@@ -1,13 +1,12 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { classNames } from '../../lib/classNames/classNames';
 import { Fragment } from 'react/jsx-runtime';
-
 import * as cls from './Dropdown.module.scss';
-import { Button, ButtonTheme } from '../Button/Button';
 import { ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import { href } from 'react-router-dom';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { mapDirectionClass } from '../../styles/consts';
+import * as popupCls from '../../styles/popups.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -23,38 +22,27 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
-    'top right': cls.optionsTopRight,
-};
-
 export function Dropdown(props: DropdownProps) {
     const { className, items, trigger, direction = 'bottom right' } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className])}>
-            <MenuButton className={cls.btn}>
+        <Menu
+            as={'div'}
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
+        >
+            <MenuButton className={cls.trigger}>
                 {trigger ? trigger : 'Menu'}
                 {/* {({ active }) => (
                     <Button
-                        theme={
-                            active
-                                ? ButtonTheme.BACKGROUND_INVERTED
-                                : ButtonTheme.CLEAR
-                        }
-                        className={classNames(
-                            cls.btn,
-                            {
-                                [cls.active]: active,
-                            },
-                            []
-                        )}
+                        theme={active ? ButtonTheme.OUTLINE : ButtonTheme.CLEAR}
+                        className={classNames(cls.btn, {}, [])}
                     >
-                        {'My account'}
+                        {trigger ? trigger : 'Menu'}
                     </Button>
                 )} */}
             </MenuButton>
@@ -71,7 +59,7 @@ export function Dropdown(props: DropdownProps) {
                                 onClick={item.onClick}
                                 className={classNames(
                                     cls.item,
-                                    { [cls.focus]: focus },
+                                    { [popupCls.focus]: focus },
                                     []
                                 )}
                             >
