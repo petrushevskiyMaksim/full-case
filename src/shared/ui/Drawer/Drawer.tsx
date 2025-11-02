@@ -48,11 +48,11 @@
 //         </Portal>
 //     );
 // });
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { memo, ReactNode, useCallback, useEffect } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import * as cls from './Drawer.module.scss';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 

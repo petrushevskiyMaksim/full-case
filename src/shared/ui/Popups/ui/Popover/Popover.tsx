@@ -5,9 +5,9 @@ import {
 } from '@headlessui/react';
 import * as cls from './Popover.module.scss';
 import * as popupCls from '../../styles/popups.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
-import { DropdownDirection } from 'shared/types/ui';
+import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 
 interface PopoverProps {

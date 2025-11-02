@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { Article } from 'entities/Article';
+import { Article } from '@/entities/Article';
 import {
     ArticleBlockType,
     ArticleType,
-} from 'entities/Article/model/consts/consts';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+} from '@/entities/Article/model/consts/consts';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta = {
     title: 'pages/ArticleDetailsPage/ArticleDetailsPage',

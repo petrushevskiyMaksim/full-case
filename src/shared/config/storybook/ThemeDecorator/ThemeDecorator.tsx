@@ -1,5 +1,5 @@
 import { ReactRenderer } from '@storybook/react-webpack5';
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { DecoratorFunction } from 'storybook/internal/csf';
 
 export const ThemeDecorator =

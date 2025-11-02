@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { ProfileCard } from './ProfileCard';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/avatar.jpg';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import avatar from '@/shared/assets/tests/avatar.jpg';
 
 const meta = {
     title: 'entities/Profile/ProfileCard',

@@ -1,5 +1,5 @@
 import type { Decorator } from '@storybook/react-webpack5';
-import 'app/styles/index.scss'; // Импорт глобальных стилей
+import '@/app/styles/index.scss'; // Импорт глобальных стилей
 
 const StyleDecorator: Decorator = (Story) => {
     // Динамически добавляем стили с переменными

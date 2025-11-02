@@ -9,9 +9,9 @@ import { counterReducer } from '../../../../entities/Counter/model/slice/counter
 import { userReducer } from '../../../../entities/User/model/slice/userSlice';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
-import { $api } from 'shared/api/api';
-import { uiReducer } from 'features/UI';
-import { rtkApi } from 'shared/api/rtkApi';
+import { $api } from '@/shared/api/api';
+import { uiReducer } from '@/features/UI';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore(
     initialState?: StateSchema,

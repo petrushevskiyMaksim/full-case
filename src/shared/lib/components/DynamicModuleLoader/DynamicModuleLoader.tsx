@@ -2,7 +2,7 @@ import { Reducer } from '@reduxjs/toolkit';
 import {
     ReduxStoreWithManager,
     StateSchemaKey,
-} from 'app/providers/StoreProvider/config/StateSchema';
+} from '@/app/providers/StoreProvider/config/StateSchema';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
