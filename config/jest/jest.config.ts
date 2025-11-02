@@ -43,9 +43,9 @@ const config: Config = {
     moduleDirectories: ['node_modules'],
     modulePaths: ['<rootDir>src'],
     moduleNameMapper: {
+        '\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1',
         '\\.(css|scss)$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        '^entities/(.*)$': '<rootDir>/src/entities/$1',
     },
     testMatch: [
         // '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
