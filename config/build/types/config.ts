@@ -17,6 +17,7 @@ export interface BuildEnv {
 
 export interface BuildOptions {
     mode: BuildMode;
+    // target: string;
     paths: BuildPaths;
     isDev: boolean;
     port: number;

@@ -13,8 +13,6 @@ import { AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton/ui/NotificationButton/NotificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown/ui/AvatarDropdown/AvatarDropdown';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { NotificationList } from '@/entities/Notification';
 
 interface NavbarProps {
     className?: string;
@@ -33,8 +31,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         setIsAuthModal(true);
     }, []);
 
-    
-
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -51,7 +47,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 </AppLink>
 
                 <HStack gap='16' className={cls.actions}>
-                    
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
