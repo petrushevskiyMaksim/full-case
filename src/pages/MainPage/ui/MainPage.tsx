@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/Popups';
-import { HStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page/Page';
+import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { RatingCard } from '@/entities/Rating';
 
 export default memo(function MainPage() {
     const { t } = useTranslation('main');
@@ -10,25 +10,11 @@ export default memo(function MainPage() {
     return (
         <Page>
             {t('Главная страница')}
-            <div>{'agasg'}</div>
-            <div>{'agasg'}</div>
-            <HStack>
-                <div>{'agasg'}</div>
-                <ListBox
-                    defaultValue={t('Выберете значение')}
-                    value={undefined}
-                    onChange={() => {}}
-                    items={[
-                        { value: '123', content: '123' },
-                        { value: '1234', content: '1234', disabled: true },
-                        { value: '12345', content: '12345' },
-                    ]}
-                />
-            </HStack>
-            <div>{'agasg'}</div>
-            <div>{'agasg'}</div>
-            <div>{'agasg'}</div>
-            <div>{'agasg'}</div>
+            <RatingCard
+                title='Как вам статья?'
+                feedbackTitle='Оставьте отзыв о статье'
+                hasFeedback
+            />
         </Page>
     );
 });
