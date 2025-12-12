@@ -712,5 +712,70 @@
       "username": "user",
       "avatar": "https://img.freepik.com/free-vector/creative-hacker-logo-template_23-2149199402.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 2,
+      "feedback": "",
+      "id": "NoboXLS"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 5,
+      "id": "bSD5sdp"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "sjkdgna;sdkgj",
+      "id": "zl6A4Eq"
+    },
+    {
+      "userId": "1",
+      "articleId": "11",
+      "rate": 5,
+      "feedback": "отстой",
+      "id": "A4PkoYz"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "id": "ARgSH6u"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }
