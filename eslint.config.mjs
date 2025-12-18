@@ -8,8 +8,7 @@ import pluginReact from 'eslint-plugin-react';
 import i18next from 'eslint-plugin-i18next';
 import { defineConfig } from 'eslint/config';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import maxPlugin from 'eslint-plugin-max-plugin-path-checker';
-console.log(maxPlugin);
+import gaponePlugin from 'eslint-plugin-gapone-plugin-path-checker';
 
 export default defineConfig([
     // Base Config
@@ -85,9 +84,9 @@ export default defineConfig([
         },
     },
     {
-        plugins: { 'max-plugin': maxPlugin },
+        plugins: { 'gapone-plugin': gaponePlugin },
         rules: {
-            'max-plugin/path-cheker': 'error',
+            'gapone-plugin/path-cheker': ['error', { alias: '@' }],
         },
     },
 ]);
