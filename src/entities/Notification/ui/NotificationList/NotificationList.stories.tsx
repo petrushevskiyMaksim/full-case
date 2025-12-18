@@ -40,7 +40,7 @@ const notification = [
 ];
 
 const meta = {
-    title: 'shared/NotificationList',
+    title: 'entities/Notification/NotificationList',
     component: NotificationList,
     decorators: [StoreDecorator({})],
 } satisfies Meta<typeof NotificationList>;

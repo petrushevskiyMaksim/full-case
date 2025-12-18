@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 const article: Article = {
     id: '1',
-    img: '',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgeE-J5qyKZexjL5uIVR_zsz4WVjeB6_O7w&s',
     createAt: '',
     views: 123,
     user: { id: '1', username: '123' },

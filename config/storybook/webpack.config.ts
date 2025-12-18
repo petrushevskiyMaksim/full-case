@@ -21,12 +21,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
         alias: {
             ...(config.resolve?.alias || {}),
             '@': paths.src,
-            '@/app': path.join(paths.src, 'app'),
-            '@/shared': path.join(paths.src, 'shared'),
-            '@/entities': path.join(paths.src, 'entities'),
-            '@/widgets': path.join(paths.src, 'widgets'),
-            '@/features': path.join(paths.src, 'features'),
-            '@/pages': path.join(paths.src, 'pages'),
+            // '@/app': path.join(paths.src, 'app'),
+            // '@/shared': path.join(paths.src, 'shared'),
+            // '@/entities': path.join(paths.src, 'entities'),
+            // '@/widgets': path.join(paths.src, 'widgets'),
+            // '@/features': path.join(paths.src, 'features'),
+            // '@/pages': path.join(paths.src, 'pages'),
         },
     };
 

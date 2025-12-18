@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { NotificationButton } from './NotificationButton';
 
 const meta = {
-    title: 'shared/NotificationButton',
+    title: 'features/NotificationButton',
     component: NotificationButton,
 } satisfies Meta<typeof NotificationButton>;
 
