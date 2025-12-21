@@ -7,7 +7,7 @@ import { uiActions } from '@/features/UI';
 import { useLocation } from 'react-router-dom';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
-import { getUIScrollByPath } from '@/features/UI/model/selectors/ui';
+import { getUIScrollByPath } from '@/features/UI';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 

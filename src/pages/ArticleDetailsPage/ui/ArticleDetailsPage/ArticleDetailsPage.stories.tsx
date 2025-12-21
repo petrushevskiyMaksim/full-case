@@ -4,7 +4,7 @@ import { Article } from '@/entities/Article';
 import {
     ArticleBlockType,
     ArticleType,
-} from '@/entities/Article/model/consts/consts';
+} from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta = {

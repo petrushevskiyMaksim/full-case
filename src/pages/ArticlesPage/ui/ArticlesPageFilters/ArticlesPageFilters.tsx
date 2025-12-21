@@ -1,7 +1,7 @@
 import * as cls from './ArticlesPageFilters.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import {
     ArticleTypeTabs,
     ArticleView,
@@ -23,7 +23,7 @@ import {
     ArticleSortField,
     ArticleType,
 } from '../../../../entities/Article/model/consts/consts';
-import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import { ArticleSortSelector } from '@/entities/Article';
 import { SortOrder } from '@/shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';

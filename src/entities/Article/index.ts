@@ -2,6 +2,7 @@ export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export type { Article } from './model/types/article';
 export {
     ArticleView,
+    ArticleBlockType,
     ArticleSortField,
     ArticleType,
 } from './model/consts/consts';

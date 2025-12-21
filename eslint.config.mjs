@@ -8,7 +8,7 @@ import pluginReact from 'eslint-plugin-react';
 import i18next from 'eslint-plugin-i18next';
 import { defineConfig } from 'eslint/config';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import gaponePlugin from 'eslint-plugin-gapone-plugin-path-checker';
+import gaponePlugin from 'eslint-plugin-gapone-plugin';
 
 export default defineConfig([
     // Base Config
@@ -83,10 +83,12 @@ export default defineConfig([
             'no-undef': 'off',
         },
     },
+    // My plugin
     {
         plugins: { 'gapone-plugin': gaponePlugin },
         rules: {
             'gapone-plugin/path-cheker': ['error', { alias: '@' }],
+            'gapone-plugin/public-api-imports': ['error', { alias: '@' }],
         },
     },
 ]);
