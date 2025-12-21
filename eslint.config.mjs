@@ -83,12 +83,23 @@ export default defineConfig([
             'no-undef': 'off',
         },
     },
+
     // My plugin
     {
         plugins: { 'gapone-plugin': gaponePlugin },
         rules: {
             'gapone-plugin/path-cheker': ['error', { alias: '@' }],
-            'gapone-plugin/public-api-imports': ['error', { alias: '@' }],
+            'gapone-plugin/public-api-imports': [
+                'error',
+                {
+                    alias: '@',
+                    testFilesPatterns: [
+                        '**/*.test.*',
+                        '**/*.story.*',
+                        '**/StoreDecorator.tsx',
+                    ],
+                },
+            ],
         },
     },
 ]);
