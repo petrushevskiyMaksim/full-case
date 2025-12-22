@@ -100,6 +100,13 @@ export default defineConfig([
                     ],
                 },
             ],
+            'gapone-plugin/layer-imports': [
+                'error',
+                {
+                    alias: '@',
+                    ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+                },
+            ],
         },
     },
 ]);

@@ -1,4 +1,5 @@
 import type { Decorator } from '@storybook/react-webpack5';
+// eslint-disable-next-line gapone-plugin/layer-imports
 import '@/app/styles/index.scss'; // Импорт глобальных стилей
 
 const StyleDecorator: Decorator = (Story) => {
