@@ -1,6 +1,9 @@
 import type { Preview } from '@storybook/react-webpack5';
 import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {
+    ThemeDecorator,
+    ThemeSwitcherDecorator,
+} from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
@@ -20,13 +23,30 @@ const preview: Preview = {
         },
     },
 
+    globalTypes: {
+        theme: {
+            name: 'Theme',
+            defaultValue: 'light',
+            toolbar: {
+                icon: 'paintbrush',
+                items: [
+                    { value: 'light', title: 'Light' },
+                    { value: 'dark', title: 'Dark' },
+                    { value: 'violet', title: 'Violet' },
+                ],
+            },
+        },
+    },
+
     decorators: [
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
+        ThemeSwitcherDecorator,
         RouterDecorator,
         StoreDecorator(),
         SuspenseDecorator,
     ],
+
     loaders: [mswLoader],
 };
 
