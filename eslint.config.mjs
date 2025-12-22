@@ -9,6 +9,7 @@ import i18next from 'eslint-plugin-i18next';
 import { defineConfig } from 'eslint/config';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import gaponePlugin from 'eslint-plugin-gapone-plugin';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default defineConfig([
     // Base Config
@@ -107,6 +108,16 @@ export default defineConfig([
                     ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
                 },
             ],
+        },
+    },
+
+    // eslint-plugin-unused-imports
+    {
+        plugins: {
+            'unused-imports': unusedImports,
+        },
+        rules: {
+            'unused-imports/no-unused-imports': 'error',
         },
     },
 ]);
