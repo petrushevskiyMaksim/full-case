@@ -1,6 +1,6 @@
-import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from '@/shared/config/tests/componentRender/componentRender';
-import { Sidebar } from '../../ui/Sidebar/Sidebar';
+import { fireEvent, screen } from '@testing-library/react';
+import { Sidebar } from './Sidebar';
 
 jest.mock('./Sidebar.module.scss', () => ({
     __esModule: true,
@@ -20,7 +20,6 @@ describe('Sidebar', () => {
         // Проверяем, что sidebar изначально не свернут
         expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed');
         fireEvent.click(toggleBtn);
-        // screen.debug();
         expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
     });
 });
