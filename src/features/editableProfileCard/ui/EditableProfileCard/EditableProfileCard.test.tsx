@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { componentRender } from '@/shared/config/tests/componentRender/componentRender';
 import { EditableProfileCard } from './EditableProfileCard';
 import { Currency } from '../../../../entities/Currency/model/types/currency';
