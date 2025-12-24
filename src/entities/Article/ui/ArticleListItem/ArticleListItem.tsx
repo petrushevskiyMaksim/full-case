@@ -14,6 +14,8 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticlesDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     article: Article;
@@ -55,7 +57,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
                     {types}
 
-                    <img
+                    <AppImage
+                        fallback={<Skeleton width={'100%'} height={250} />}
                         className={cls.img}
                         src={article.img}
                         alt={article.title}
@@ -92,7 +95,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         >
             <Card>
                 <div className={cls.imageWrapper}>
-                    <img
+                    <AppImage
+                        fallback={<Skeleton width={200} height={200} />}
                         className={cls.img}
                         src={article.img}
                         alt={article.title}
