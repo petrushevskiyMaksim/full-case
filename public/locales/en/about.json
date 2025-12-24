@@ -1,1 +1,12 @@
-{ "О сайте": "About us" }
+{
+  "text": "text",
+  "О сайте": "About us",
+  "еще один тест": "еще один тест",
+  "перевод": "translate",
+  "тест": "тест",
+  "about": {
+    "TEXT": "TEXT"
+  },
+  "tests": "tests",
+  "translate": "translate"
+}
