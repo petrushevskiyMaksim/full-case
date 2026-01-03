@@ -10,34 +10,26 @@
 //             "cypress",
 //             "node"
 //         ],
-//         "allowJs": true,
-//         "isolatedModules": false
 //     },
 //     "extends": "../tsconfig.json",
 //     "include": [
-//         "**/*.ts"
+//         "**/*.ts",
+//         "../node_modules/cypress/types/*.d.ts"
 //     ]
 // }
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "lib": [
-            "es6",
+            "es5",
             "dom"
         ],
         "types": [
             "cypress",
             "node"
-        ],
-        // "module": "commonjs",
-        // "moduleResolution": "node",
-        // "strict": true,
-        // "esModuleInterop": true,
-        // "skipLibCheck": true,
-        // "forceConsistentCasingInFileNames": true
+        ]
     },
     "include": [
-        "**/*.ts",
-        "../node_modules/cypress/types/*.d.ts"
+        "**/*.ts"
     ]
 }
