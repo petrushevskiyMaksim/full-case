@@ -125,9 +125,10 @@ export default defineConfig([
     // Cypress
     {
         files: ['cypress/**/*.{js,ts,tsx}'],
-        plugins: {
-            cypress: cypressPlugin, // ✅ Объект с плагинами
+        plugins: { cypress: cypressPlugin },
+        rules: {
+            // 'cypress/globals': true,
+            '@typescript-eslint/no-namespace': 'off',
         },
-        rules: { '@typescript-eslint/no-namespace': 'off' },
     },
 ]);
