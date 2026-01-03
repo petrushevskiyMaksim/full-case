@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import path from 'path';
-// const path = require('path');
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildPaths, BuildEnv } from './config/build/types/config';
 

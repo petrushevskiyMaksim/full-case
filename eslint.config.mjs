@@ -10,6 +10,7 @@ import { defineConfig } from 'eslint/config';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import gaponePlugin from 'eslint-plugin-gapone-plugin';
 import unusedImports from 'eslint-plugin-unused-imports';
+import cypressPlugin from 'eslint-plugin-cypress';
 
 export default defineConfig([
     // Base Config
@@ -119,5 +120,14 @@ export default defineConfig([
         rules: {
             'unused-imports/no-unused-imports': 'error',
         },
+    },
+
+    // Cypress
+    {
+        files: ['cypress/**/*.{js,ts,tsx}'],
+        plugins: {
+            cypress: cypressPlugin, // ✅ Объект с плагинами
+        },
+        rules: { '@typescript-eslint/no-namespace': 'off' },
     },
 ]);

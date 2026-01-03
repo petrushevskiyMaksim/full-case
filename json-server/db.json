@@ -639,6 +639,13 @@
             "password": "123",
             "roles": ["MANAGER"],
             "avatar": "https://www.freepik.com/premium-vector/hacker-with-laptop_3762953.htm#from_element=cross_selling__vector"
+        },
+        {
+            "id": "4",
+            "username": "testuser",
+            "password": "123",
+            "roles": ["ADMIN"],
+            "avatar": "https://image.api.playstation.com/vulcan/img/cfn/11307j6TBTzh7g71otrP_J9tbJwdxhcdmbhtkAuDqYPjhIIwkP3__rOS_rI4g76oypwQ4nvKeCcN5KkAhjF-FRmoeiwp0YjB.png?w=440&thumb=false"
         }
     ],
     "profile": [
