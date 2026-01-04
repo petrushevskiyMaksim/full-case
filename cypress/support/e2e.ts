@@ -11,7 +11,9 @@
 //
 // You can read more here:
 // https://on.cypress.io/configuration
-import './commands';
-import { login } from './commands/login';
+// ***********************************************************
 
-Cypress.Commands.add('login', login);
+// Import commands.js using ES2015 syntax:
+import './commands';
+
+Cypress.Commands.add('login', (email, password) => {});

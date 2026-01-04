@@ -10,7 +10,7 @@ import { defineConfig } from 'eslint/config';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import gaponePlugin from 'eslint-plugin-gapone-plugin';
 import unusedImports from 'eslint-plugin-unused-imports';
-import cypressPlugin from 'eslint-plugin-cypress';
+// import cypressPlugin from 'eslint-plugin-cypress';
 
 export default defineConfig([
     // Base Config
@@ -125,35 +125,13 @@ export default defineConfig([
     // Cypress
     {
         files: ['cypress/**/*.{js,ts,tsx}'],
-        plugins: { cypress: cypressPlugin },
+        //     plugins: { cypress: cypressPlugin },
+        //     extends: [
+        //         cypressPlugin.configs.recommended,
+        //         cypressPlugin.configs.globals,
+        //     ],
         rules: {
-            // '@typescript-eslint/no-namespace': 'off',
-            // Cypress-specific rules
-            'cypress/no-assigning-return-values': 'error',
-            'cypress/no-unnecessary-waiting': 'warn',
-            'cypress/no-pause': 'error',
-
-            // Отключаем ВСЕ правила, которые мешают в тестах
             '@typescript-eslint/no-namespace': 'off',
-            '@typescript-eslint/no-unused-vars': 'off',
-            '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/ban-ts-comment': 'off',
-
-            // Отключаем React правила для Cypress
-            'react/button-has-type': 'off',
-            'react-hooks/rules-of-hooks': 'off',
-            'react-hooks/exhaustive-deps': 'off',
-
-            // Отключаем i18n правила
-            'i18next/no-literal-string': 'off',
-
-            // Отключаем кастомные правила
-            'gapone-plugin/path-cheker': 'off',
-            'gapone-plugin/public-api-imports': 'off',
-            'gapone-plugin/layer-imports': 'off',
-
-            // Отключаем unused imports для тестов
-            'unused-imports/no-unused-imports': 'off',
         },
     },
 ]);
