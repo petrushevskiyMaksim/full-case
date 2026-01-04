@@ -1,4 +1,8 @@
 /// <reference types="cypress" />
+
+import { User } from '../../src/entities/User/model/types/user';
+import { login } from './commands/login';
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -9,9 +13,9 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
-//
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+
+Cypress.Commands.add('login', login);
 //
 //
 // -- This is a child command --
@@ -25,10 +29,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
+
 declare global {
     namespace Cypress {
         interface Chainable {
-            login(email: string, password: string): Chainable<void>;
+            login(username?: string, password?: string): Chainable<User>;
         }
     }
 }

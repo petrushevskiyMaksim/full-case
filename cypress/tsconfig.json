@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "types": [
+            "cypress",
+            "node"
+        ],
+        // "module": "commonjs",
+        // "moduleResolution": "node",
+        // "esModuleInterop": true,
+        // "allowSyntheticDefaultImports": true,
+        // "strict": true,
+        // "skipLibCheck": true,
+        // "noEmit": true,
+        // "isolatedModules": true
+    },
+    "extends": "../tsconfig.json",
+    "include": [
+        "**/*.ts",
+        "../node_modules/cypress/types/index.d.ts"
+    ]
+}

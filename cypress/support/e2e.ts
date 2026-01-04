@@ -16,4 +16,4 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
-Cypress.Commands.add('login', (email, password) => {});
+// Cypress.Commands.add('login', (email, password) => {});
