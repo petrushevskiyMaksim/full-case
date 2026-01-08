@@ -1,0 +1,25 @@
+export const setRate = (
+    starsCount: number = 4,
+    feedback: string = 'feedback'
+) => {
+    cy.getByTestId(`StarRating.${starsCount}`).click();
+    cy.getByTestId(`RatingCard.Input`).type(feedback);
+    cy.getByTestId(`RatingCard.Send`).click();
+};
+
+export const removeComment = (commentId: string) => {
+    return cy.request({
+        method: 'DELETE',
+        url: `http://localhost:8000/articles/${commentId}`,
+        headers: { Authorization: 'asfsg' },
+    });
+};
+
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            setRate(starsCount: number, feedback: string): Chainable<void>;
+            removeComment(commentId: string): Chainable<void>;
+        }
+    }
+}
