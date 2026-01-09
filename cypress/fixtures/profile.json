@@ -1,5 +1,11 @@
 {
-  "id": 8739,
-  "name": "Jane",
-  "email": "jane@example.com"
+    "id": "4",
+    "firstname": "test",
+    "lastname": "user",
+    "age": 35,
+    "currency": "RUB",
+    "country": "Belarus",
+    "city": "Tymen",
+    "username": "testuser",
+    "avatar": "https://image.api.playstation.com/vulcan/img/cfn/11307j6TBTzh7g71otrP_J9tbJwdxhcdmbhtkAuDqYPjhIIwkP3__rOS_rI4g76oypwQ4nvKeCcN5KkAhjF-FRmoeiwp0YjB.png?w=440&thumb=false"
 }
