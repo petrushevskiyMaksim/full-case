@@ -1,12 +1,9 @@
 import { Article } from '../../../src/entities/Article';
 
-// let currentArticleId = '';
-
 describe('Пользователь заходит на страницу статьи', () => {
     beforeEach(() => {
         cy.login();
         cy.createArticle().then((article: Article) => {
-            // currentArticleId = article.id;
             Cypress.env('articleId', article.id);
             cy.visit(`articles/${article.id}`);
         });
@@ -23,16 +20,22 @@ describe('Пользователь заходит на страницу стат
     it('И видит содержимое статьи', () => {
         cy.getByTestId('ArticleDetails.Info').should('exist');
     });
+
     it('И видит список рекоммендаций', () => {
         cy.getByTestId('ArticleRecommendationsList').should('exist');
     });
+
     it('И оставляет комментарий', () => {
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('AddCommentForm').scrollIntoView();
         cy.addComment('text');
         cy.getByTestId('CommentCard.Content').should('have.length', 1);
     });
+
     it('И ставит оценку', () => {
+        cy.intercept('GET', '**/articles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(4, 'feedback');
