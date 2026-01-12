@@ -14,6 +14,7 @@ export const useTheme = (): UseThemeResult => {
     const toggleTheme = () => {
         let newTheme: Theme;
 
+        // prettier-ignore
         switch (theme) {
         case Theme.DARK:
             newTheme = Theme.LIGHT;
