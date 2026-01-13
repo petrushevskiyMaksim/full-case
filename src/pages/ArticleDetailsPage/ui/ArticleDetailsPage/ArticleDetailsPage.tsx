@@ -15,7 +15,7 @@ import { VStack } from '../../../../shared/ui/Stack/VStack/VStack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { useTranslation } from 'react-i18next';
 
@@ -37,18 +37,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         return null;
     }
 
-    const articleRatingCard = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating articleId={id} />,
-        off: () => <Card>{t('toggleFeatures')}</Card>,
-    });
-
-    // toggleFeatures({
-    //     name: 'isCounterEnabled',
-    //     on: () => console.log('NEW'),
-    //     off: () => console.log('OLD'),
-    // });
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
@@ -57,7 +45,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {articleRatingCard}
+                    <ToggleFeatures
+                        feature='isArticleRatingEnabled'
+                        on={<ArticleRating articleId={id} />}
+                        off={<Card>{t('toggleFeatures')}</Card>}
+                    />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

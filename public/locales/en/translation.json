@@ -97,5 +97,7 @@
     "опять тест": "opyat test",
     "TEXT": "TEXT",
     "reset": "reset",
-    "admin": "Admin"
+    "admin": "Admin",
+    "greetingTitle": "Welcome to the articles page",
+    "greetingText": "Here you can search and view articles on various topics"
 }
