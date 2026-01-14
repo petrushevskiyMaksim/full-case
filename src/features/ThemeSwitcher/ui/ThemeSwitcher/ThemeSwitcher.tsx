@@ -1,11 +1,17 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, FC, memo, useCallback } from 'react';
-import ThemeIcon from '@/shared/assets/icons/theme-light.svg';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import ThemeIconDeprecated from '@/shared/assets/icons/theme-light.svg';
+import ThemeIcon from '@/shared/assets/icons/Theme.svg';
+import {
+    Button as ButtonDeprecated,
+    ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
-import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ThemeSwitcherProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -29,12 +35,23 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo((props) => {
     }, [toggleTheme, dispatch]);
 
     return (
-        <Button
-            theme={ButtonTheme.CLEAR}
-            className={classNames('', {}, [className])}
-            onClick={onToggleHandler}
-        >
-            <Icon Svg={ThemeIcon} width={40} height={40} inverted />
-        </Button>
+        <ToggleFeatures
+            feature='isAppRedesigned'
+            on={<Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />}
+            off={
+                <ButtonDeprecated
+                    theme={ButtonTheme.CLEAR}
+                    className={classNames('', {}, [className])}
+                    onClick={onToggleHandler}
+                >
+                    <IconDeprecated
+                        Svg={ThemeIconDeprecated}
+                        width={40}
+                        height={40}
+                        inverted
+                    />
+                </ButtonDeprecated>
+            }
+        />
     );
 });
