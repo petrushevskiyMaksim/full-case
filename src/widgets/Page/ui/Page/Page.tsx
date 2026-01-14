@@ -11,6 +11,7 @@ import { getUIScrollByPath } from '@/features/UI';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -49,10 +50,24 @@ export const Page = memo((props: PageProps) => {
         );
     }, 500);
 
+    toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => cls.PageRedesigned,
+        off: () => cls.Page,
+    });
+
     return (
         <main
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className]
+            )}
             onScroll={onScroll}
             id={PAGE_ID}
             data-testid={props['data-testid'] ?? 'Page'}
