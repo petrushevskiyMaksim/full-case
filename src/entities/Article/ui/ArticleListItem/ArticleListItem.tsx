@@ -5,17 +5,17 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import type { Article } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import type { ArticleTextBlock } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 import IconEye from '@/shared/assets/icons/eye-20-20.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { Card } from '@/shared/ui/Card';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticlesDetails } from '@/shared/const/router';
-import { AppLink } from '@/shared/ui';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
 
 interface ArticleListItemProps {
     article: Article;

@@ -1,12 +1,12 @@
 import { SidebarItemType } from '../../model/types/sidebar';
 import * as cls from './SidebarItem.module.scss';
 import { useTranslation } from 'react-i18next';
-import { AppLink } from '@/shared/ui';
-import { AppLinkTheme } from '@/shared/ui/AppLink';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { memo } from 'react';
 import { classNames } from '../../../../shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '../../../../entities/User';
+import { AppLinkTheme } from '@/shared/ui/deprecated/AppLink/AppLink';
 
 interface SidebarItemProps {
     item: SidebarItemType;

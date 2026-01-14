@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Country } from '../../../../entities/Country';
 import { Currency } from '../../../../entities/Currency';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -20,7 +20,7 @@ import {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { ValidateProfileErrors } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {

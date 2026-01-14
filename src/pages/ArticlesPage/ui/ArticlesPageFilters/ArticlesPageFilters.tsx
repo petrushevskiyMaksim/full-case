@@ -13,8 +13,8 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { useSelector } from 'react-redux';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
 import { SortOrder } from '@/shared/types/sort';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
