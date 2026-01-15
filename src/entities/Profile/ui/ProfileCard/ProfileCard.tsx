@@ -10,7 +10,7 @@ import { CurrencySelect } from '../../../Currency/ui/CurrencySelect/CurrencySele
 import { Country } from '../../../Country/model/types/country';
 import { CountrySelect } from '../../../Country/ui/CountrySelect/CountrySelect';
 import * as cls from './ProfileCard.module.scss';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ProfileCardProps {
     className?: string;

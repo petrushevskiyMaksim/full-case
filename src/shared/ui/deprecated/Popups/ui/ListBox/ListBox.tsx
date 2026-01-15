@@ -8,7 +8,7 @@ import {
 import { Fragment, ReactNode } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { DropdownDirection } from '@/shared/types/ui';
-import { HStack } from '../../../Stack';
+import { HStack } from '../../../../redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '../../../Button/Button';
 import { mapDirectionClass } from '../../styles/consts';

@@ -25,7 +25,7 @@ import { ArticleBlockType } from '../../model/consts/consts';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleImageBlockComponents } from '../ArticleImageBlockComponents/ArticleImageBlockComponents';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 
 interface ArticleDetailsProps {
@@ -46,22 +46,23 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const error = useSelector(getArticleDetailsError);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
+        // prettier-ignore
         switch (block.type) {
-            case ArticleBlockType.CODE:
-                return (
-                    <ArticleCodeBlockComponent key={block.id} block={block} />
-                );
-            case ArticleBlockType.IMAGE:
-                return (
-                    <ArticleImageBlockComponents key={block.id} block={block} />
-                );
-            case ArticleBlockType.TEXT:
-                return (
-                    <ArticleTextBlockComponent key={block.id} block={block} />
-                );
+        case ArticleBlockType.CODE:
+            return (
+                <ArticleCodeBlockComponent key={block.id} block={block} />
+            );
+        case ArticleBlockType.IMAGE:
+            return (
+                <ArticleImageBlockComponents key={block.id} block={block} />
+            );
+        case ArticleBlockType.TEXT:
+            return (
+                <ArticleTextBlockComponent key={block.id} block={block} />
+            );
 
-            default:
-                return null;
+        default:
+            return null;
         }
     }, []);
 

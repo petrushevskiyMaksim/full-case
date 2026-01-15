@@ -1,0 +1,19 @@
+.options {
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 1000;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+    color: var(--text-redesigned);
+    border: none;
+    outline: none;
+}
+
+.item {
+    padding: 10px 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

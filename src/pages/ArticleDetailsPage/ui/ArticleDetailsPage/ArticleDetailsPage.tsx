@@ -11,7 +11,7 @@ import { articleDetailsCommentsReducer } from '../../model/slice/articleDetailsC
 import { Page } from '@/widgets/Page';
 import { articleDetailsPageRecommendationsReducer } from '../../model/slice/articleDetailsPageRecommendationSlice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { VStack } from '../../../../shared/ui/deprecated/Stack/VStack/VStack';
+import { VStack } from '../../../../shared/ui/redesigned/Stack/VStack/VStack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
