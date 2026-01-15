@@ -1,6 +1,6 @@
 import * as cls from './Page.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { memo, ReactNode, UIEvent, useRef } from 'react';
+import { memo, ReactNode, RefObject, UIEvent, useRef } from 'react';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { uiActions } from '@/features/UI';
@@ -23,8 +23,12 @@ export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
     const { className, children, onScrollEnd } = props;
-    const wrapperRef = useRef<HTMLDivElement>(null);
-    const triggerRef = useRef<HTMLDivElement>(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(
+        null
+    ) as RefObject<HTMLDivElement>;
+    const triggerRef = useRef<HTMLDivElement | null>(
+        null
+    ) as RefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector((state: StateSchema) =>
@@ -33,7 +37,11 @@ export const Page = memo((props: PageProps) => {
 
     useInfiniteScroll({
         triggerRef,
-        wrapperRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 

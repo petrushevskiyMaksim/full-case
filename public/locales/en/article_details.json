@@ -1,4 +1,6 @@
 {
   "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи",
-  "toggleFeatures": " Articles will be rated soon"
+  "toggleFeatures": " Articles will be rated soon",
+  "article-details.sortBy": "Sort By",
+  "sortBy": "Sort by:"
 }

@@ -5,7 +5,7 @@ import {
     ListboxOption,
     ListboxOptions,
 } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import { DropdownDirection } from '@/shared/types/ui';
 import { HStack } from '../../../../redesigned/Stack';
@@ -14,24 +14,24 @@ import { Button } from '../../../Button/Button';
 import { mapDirectionClass } from '../../styles/consts';
 import * as popupCls from '../../styles/popups.module.scss';
 
-export interface ListBoxItem {
-    value: string;
+export interface ListBoxItem<T extends string> {
+    value: T;
     content: ReactNode;
     disabled?: boolean;
 }
 
-interface ListBoxProps {
-    items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+    items?: ListBoxItem<T>[];
     className?: string;
-    value?: string;
+    value?: T;
     defaultValue?: string;
-    onChange: (value: string) => void;
+    onChange: (value: T) => void;
     readonly?: boolean;
     label?: string;
     direction?: DropdownDirection;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         className,
         items,
@@ -44,6 +44,10 @@ export function ListBox(props: ListBoxProps) {
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
+
+    const selectedItem = useMemo(() => {
+        return items?.find((item) => item.value === value);
+    }, [items, value]);
 
     return (
         <HStack gap='8'>
@@ -61,7 +65,9 @@ export function ListBox(props: ListBoxProps) {
                     as={Fragment}
                 >
                     {/* {value ?? defaultValue} */}
-                    <Button disabled={readonly}>{value ?? defaultValue}</Button>
+                    <Button variant='filled' disabled={readonly}>
+                        {selectedItem?.content ?? defaultValue}
+                    </Button>
                 </ListboxButton>
                 <ListboxOptions
                     portal={false}
