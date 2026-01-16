@@ -22,7 +22,7 @@ const options = [
 export const CountrySelect = memo((props: CountrySelectProps) => {
     const { className, value, onChange, readonly } = props;
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     const onChangeHandler = useCallback(
         (value: string) => {
@@ -35,8 +35,8 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         className: classNames('', {}, [className]),
         value: value,
         items: options,
-        label: t('Укажите страну'),
-        defaultValue: t('Укажите страну'),
+        label: t('select country'),
+        defaultValue: t('select country'),
         onChange: onChangeHandler,
         readonly: readonly,
         direction: 'top left' as const,

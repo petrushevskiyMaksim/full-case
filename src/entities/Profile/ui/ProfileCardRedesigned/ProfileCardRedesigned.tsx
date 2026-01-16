@@ -65,7 +65,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
         onChangeCurrency,
         onChangeCountry,
     } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     return (
         <Card padding='24' max className={className}>
@@ -83,27 +83,27 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                     <VStack gap='16' max>
                         <Input
                             value={data?.firstname}
-                            label={t('Имя')}
+                            label={t('name')}
                             onChange={onChangeFirstname}
                             readonly={readonly}
                             data-testid={'ProfileCard.firstname'}
                         />
                         <Input
                             value={data?.lastname}
-                            label={t('Фамилия')}
+                            label={t('lastname')}
                             onChange={onChangeLastname}
                             readonly={readonly}
                             data-testid={'ProfileCard.lastname'}
                         />
                         <Input
                             value={data?.age}
-                            label={t('Возраст')}
+                            label={t('age')}
                             onChange={onChangeAge}
                             readonly={readonly}
                         />
                         <Input
                             value={data?.city}
-                            label={t('Город')}
+                            label={t('city')}
                             onChange={onChangeCity}
                             readonly={readonly}
                         />
@@ -111,13 +111,13 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
                     <VStack gap='16' max>
                         <Input
                             value={data?.avatar}
-                            label={t('Ссылка на аватар')}
+                            label={t('avatar link')}
                             onChange={onChangeAvatar}
                             readonly={readonly}
                         />
                         <Input
                             value={data?.username}
-                            label={t('Имя пользователя')}
+                            label={t('user name')}
                             onChange={onChangeUsername}
                             readonly={readonly}
                         />

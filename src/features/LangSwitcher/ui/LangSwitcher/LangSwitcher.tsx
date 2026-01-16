@@ -4,7 +4,7 @@ import {
     Button as ButtonDeprecated,
     ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button } from '@/shared/ui/redesigned/Button';
 
@@ -16,9 +16,16 @@ interface LangSwitcherProps {
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
-    const toggle = () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-    };
+    // const toggle = () => {
+    //     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    // };
+    const toggle = useCallback(async () => {
+        try {
+            await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+        } catch (error) {
+            console.error('Failed to change language:', error);
+        }
+    }, [i18n]);
 
     return (
         <ToggleFeatures
