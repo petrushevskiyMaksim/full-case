@@ -40,7 +40,7 @@ export const Tabs = memo((props: TabsProps) => {
                 const isSelected = tab.value === value;
                 return (
                     <Card
-                        className={classNames(cls.tab, {
+                        className={classNames('', {
                             [cls.selected]: isSelected,
                         })}
                         variant={isSelected ? 'light' : 'normal'}

@@ -60,7 +60,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
             on={
                 <div
                     className={classNames(
-                        cls.ArticleSortSelectorRedesigned,
+                        '',
                         {},
                         [className]
                     )}

@@ -45,6 +45,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
         >
             <VStack gap='32'>
                 <Input
+                    size='s'
                     placeholder={t('Поиск')}
                     value={search}
                     onChange={onChangeSearch}
@@ -56,11 +57,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
                     onChangeOrder={onChangeOrder}
                     onChangeSort={onChangeSort}
                 />
-                <ArticleTypeTabs
-                    className={cls.tabs}
-                    value={type}
-                    onChangeType={onChangeType}
-                />
+                <ArticleTypeTabs value={type} onChangeType={onChangeType} />
             </VStack>
         </Card>
     );
