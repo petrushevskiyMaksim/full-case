@@ -13,6 +13,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '../../../Button/Button';
 import { mapDirectionClass } from '../../styles/consts';
 import * as popupCls from '../../styles/popups.module.scss';
+import { Icon } from '../../../Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-sidebar.svg';
 
 export interface ListBoxItem<T extends string> {
     value: T;
@@ -65,7 +67,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     as={Fragment}
                 >
                     {/* {value ?? defaultValue} */}
-                    <Button variant='filled' disabled={readonly}>
+                    <Button
+                        variant='filled'
+                        disabled={readonly}
+                        addonRight={<Icon Svg={ArrowIcon} />}
+                    >
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </ListboxButton>
