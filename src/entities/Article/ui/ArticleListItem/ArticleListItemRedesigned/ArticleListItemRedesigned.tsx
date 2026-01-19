@@ -23,14 +23,18 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
     const userInfo = (
         <>
-            <Avatar size={32} src={article.user.avatar} />
+            <Avatar
+                className={cls.avatar}
+                size={32}
+                src={article.user.avatar}
+            />
             <Text bold text={article.user.username} />
         </>
     );
     const views = (
         <HStack gap='8'>
             <Icon Svg={EyeIcon} />
-            <Text className={cls.views} text={String(article.views)} />
+            <Text text={String(article.views)} />
         </HStack>
     );
 
@@ -88,22 +92,19 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             target={target}
             to={getRouteArticlesDetails(article.id)}
         >
-            <Card className={cls.card} border='roundBorder'>
+            <Card padding='0' className={cls.card} border='roundBorder'>
                 {/* <div className={cls.imageWrapper}> */}
                 <AppImage
-                    fallback={<Skeleton width={200} height={200} />}
+                    fallback={<Skeleton width={'100%'} height={200} />}
                     className={cls.img}
                     src={article.img}
                     alt={article.title}
                 />
                 <VStack className={cls.info} gap='4'>
-                    <Text className={cls.title} text={article.title} />
+                    <Text text={article.title} />
                     <VStack max gap='4' className={cls.footer}>
                         <HStack max justify='between'>
-                            <Text
-                                className={cls.date}
-                                text={article.createAt}
-                            />
+                            <Text text={article.createAt} />
                             {views}
                         </HStack>
                         <HStack gap='4'>{userInfo}</HStack>
