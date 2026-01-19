@@ -15,6 +15,7 @@ i18n.use(Backend)
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
+        pluralSeparator: '_',
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
         },

@@ -11,6 +11,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     variant?: CardVariant;
     max?: boolean;
+    fullHeight?: boolean;
     padding?: CardPadding;
     border?: CardBorder;
 }
@@ -27,6 +28,7 @@ export const Card = memo((props: CardProps) => {
         className,
         children,
         max,
+        fullHeight,
         variant = 'normal',
         padding = '8',
         border = 'normalBorder',
@@ -37,12 +39,11 @@ export const Card = memo((props: CardProps) => {
 
     return (
         <div
-            className={classNames(cls.Card, { [cls.max]: max }, [
-                className,
-                cls[variant],
-                cls[paddingsClass],
-                cls[border],
-            ])}
+            className={classNames(
+                cls.Card,
+                { [cls.max]: max, [cls.fullHeight]: fullHeight },
+                [className, cls[variant], cls[paddingsClass], cls[border]]
+            )}
             {...otherProps}
         >
             {children}
