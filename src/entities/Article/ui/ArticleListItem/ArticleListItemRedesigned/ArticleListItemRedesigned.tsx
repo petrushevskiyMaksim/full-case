@@ -45,6 +45,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
         return (
             <Card
+                border='patrialBorder'
                 padding='24'
                 max
                 data-testid='ArticleListItem'
@@ -92,7 +93,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             target={target}
             to={getRouteArticlesDetails(article.id)}
         >
-            <Card padding='0' className={cls.card} border='roundBorder'>
+            <Card padding='0' className={cls.card} border='patrialBorder'>
                 {/* <div className={cls.imageWrapper}> */}
                 <AppImage
                     fallback={<Skeleton width={'100%'} height={200} />}

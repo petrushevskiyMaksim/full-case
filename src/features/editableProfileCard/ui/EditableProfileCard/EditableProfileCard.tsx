@@ -76,7 +76,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     const onChangeAge = useCallback(
         (value?: string) => {
-            // dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
             // Если значение пустое, можно установить 0 или undefined
             if (value === '' || value === undefined) {
                 dispatch(profileActions.updateProfile({ age: 0 }));
@@ -84,20 +83,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             }
             // Проверяем, что строка содержит только цифры
             if (!/^\d+$/.test(value)) {
-                // Можно показать ошибку или просто игнорировать ввод
                 return;
             }
 
             const numValue = Number(value);
 
-            // Дополнительные проверки (если нужно)
             if (numValue < 0) {
-                return; // Игнорируем отрицательные числа
+                return;
             }
-            // Если нужно ограничить максимальный возраст
-            // if (numValue > 150) {
-            //     return;
-            // }
+
             dispatch(profileActions.updateProfile({ age: numValue }));
         },
         [dispatch]
