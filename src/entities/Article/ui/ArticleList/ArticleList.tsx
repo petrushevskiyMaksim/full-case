@@ -56,7 +56,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     wrap='wrap'
                     gap='16'
                     data-testid='ArticleList'
-                    className={classNames(cls.ArticleListRedesigned, {}, [])}
+                    className={classNames('', {}, [])}
                 >
                     {articles.map((article) => (
                         <ArticleListItem

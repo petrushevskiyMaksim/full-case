@@ -1,5 +1,4 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import * as cls from './ArticleAdditionalInfo.module.scss';
 import { User } from '@/entities/User';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -20,10 +19,7 @@ export const ArticleAdditionalInfo = (props: ArticleAdditionalInfoProps) => {
     const { t } = useTranslation();
 
     return (
-        <VStack
-            gap='32'
-            className={classNames(cls.ArticleAdditionalInfo, {}, [className])}
-        >
+        <VStack gap='32' className={classNames('', {}, [className])}>
             <HStack gap='8'>
                 <Avatar src={author.avatar} size={32} />
                 <Text text={author.username} bold />

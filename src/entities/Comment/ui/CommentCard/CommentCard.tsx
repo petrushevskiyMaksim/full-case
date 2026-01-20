@@ -67,7 +67,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                         data-testid='CommentCard.Content'
                         gap='8'
                         max
-                        className={classNames(cls.CommentCardRedesigned, {}, [
+                        className={classNames('', {}, [
                             className,
                         ])}
                     >

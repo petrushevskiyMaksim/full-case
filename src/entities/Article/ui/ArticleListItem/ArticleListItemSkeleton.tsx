@@ -20,7 +20,7 @@ export const ArticleListItemSkeleton = memo(
         const mainClass = toggleFeatures({
             name: 'isAppRedesigned',
             on: () => cls.ArticleListItemRedesigned,
-            off: () => cls.ArticleListItem,
+            off: () => '',
         });
 
         const Skeleton = toggleFeatures({
