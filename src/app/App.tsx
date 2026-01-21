@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 const App = () => {
     const { theme } = useTheme();
@@ -17,11 +18,29 @@ const App = () => {
     const inited = useSelector(getUserInited);
 
     useEffect(() => {
-        dispatch(initAuthData());
-    }, [dispatch]);
+        if (!inited) {
+            dispatch(initAuthData());
+        }
+    }, [dispatch, inited]);
 
     if (!inited) {
-        return <PageLoader />;
+        return (
+            //     <div id='app' className={classNames('app_redesigned', {}, [theme])}>
+            //         <AppLoaderLayout />
+            //     </div>
+            <ToggleFeatures
+                feature='isAppRedesigned'
+                on={
+                    <div
+                        id='app'
+                        className={classNames('app_redesigned', {}, [theme])}
+                    >
+                        <AppLoaderLayout />
+                    </div>
+                }
+                off={<PageLoader />}
+            />
+        );
     }
 
     return (
@@ -37,7 +56,6 @@ const App = () => {
                             content={<AppRouter />}
                             header={<Navbar />}
                             sidebar={<Sidebar />}
-                            toolbar={<div>{'asfasf'}</div>}
                         />
                     </Suspense>
                 </div>
