@@ -21,10 +21,9 @@
 
 .rightbar {
     grid-area: rightbar;
-
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .rightbar,
@@ -39,7 +38,7 @@
 }
 
 .toolbar {
-    justify-self: end;
-
-    // height: 100%;
+    // justify-self: end;
+    height: 100%;
+    width: 100%;
 }
