@@ -9,6 +9,7 @@ import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { Theme } from '../../src/shared/const/theme';
+import { FeaturesFlagsDecorator } from '../../src/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
 
 initialize();
 
@@ -45,6 +46,7 @@ const preview: Preview = {
         RouterDecorator,
         StoreDecorator(),
         SuspenseDecorator,
+        FeaturesFlagsDecorator({}),
     ],
 
     loaders: [mswLoader],

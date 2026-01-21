@@ -8,8 +8,7 @@ import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Theme } from '@/shared/const/theme';
 // eslint-disable-next-line gapone-plugin/layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
-// eslint-disable-next-line gapone-plugin/layer-imports
-import '@/app/styles/index.scss';
+import '../../../../../src/app/styles/index.scss';
 
 export interface componentRenderOptions {
     route?: string;

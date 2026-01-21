@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 // import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta = {
-    title: 'shared/ListBox',
+    title: 'shared/ListBoxRedesigned',
     component: ListBox,
     decorators: [
         (Story) => <div style={{padding:'100px'}}><Story /></div>

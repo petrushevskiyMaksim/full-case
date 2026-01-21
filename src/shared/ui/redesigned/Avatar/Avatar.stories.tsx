@@ -3,7 +3,7 @@ import { Avatar } from './Avatar';
 import AvatarImg from './avatar.jpg';
 
 const meta = {
-    title: 'shared/Avatar',
+    title: 'shared/AvatarRedesigned',
     component: Avatar,
 } satisfies Meta<typeof Avatar>;
 

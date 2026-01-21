@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Dropdown } from './Dropdown';
 
 const meta = {
-    title: 'shared/Dropdown',
+    title: 'shared/DropdownRedesigned',
     component: Dropdown,
 } satisfies Meta<typeof Dropdown>;
 

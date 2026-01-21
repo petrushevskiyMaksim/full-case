@@ -5,7 +5,7 @@ import { Popover } from './Popover';
 // import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
 
 const meta = {
-    title: 'shared/Popover',
+    title: 'shared/PopoverRedesigned',
     component: Popover,
     decorators: [
         (Story) => (

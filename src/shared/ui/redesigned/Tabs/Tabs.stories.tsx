@@ -3,7 +3,7 @@ import { Tabs } from './Tabs';
 import { fn } from '@storybook/test';
 
 const meta = {
-    title: 'shared/Tabs',
+    title: 'shared/TabsRedesigned',
     component: Tabs,
 } satisfies Meta<typeof Tabs>;
 

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { CommentCard } from './CommentCard';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta = {
     title: 'entities/Comment/CommentCard',
@@ -9,29 +10,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
-    args: {
-        comment: {
+const normalArgs = {
+    comment: {
+        id: '1',
+        text: 'hello world',
+        user: {
             id: '1',
-            text: 'hello world',
-            user: {
-                id: '1',
-                username: 'max',
-            },
+            username: 'max',
         },
     },
 };
 
+export const Normal: Story = {
+    args: normalArgs,
+};
+
+export const NormalRedesigned: Story = {
+    args: normalArgs,
+    decorators: [NewDesignDecorator],
+};
+
 export const Loading: Story = {
     args: {
-        comment: {
-            id: '1',
-            text: 'hello world',
-            user: {
-                id: '1',
-                username: 'max',
-            },
-        },
+        ...normalArgs,
         isLoading: true,
     },
 };

@@ -3,7 +3,7 @@ import { Card } from './Card';
 import { Text } from '../../redesigned/Text/Text';
 
 const meta = {
-    title: 'shared/Card',
+    title: 'shared/CardRedesigned',
     component: Card,
 } satisfies Meta<typeof Card>;
 
